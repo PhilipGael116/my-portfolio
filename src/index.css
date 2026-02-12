@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #3B82F6;
+}
+
+body {
+    font-family: monospace;
+    background-color: #0F172A;
+}
