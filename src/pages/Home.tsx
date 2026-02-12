@@ -4,18 +4,18 @@ const Home = () => {
     return (
         <div className="lg:px-20 px-10 py-20 min-h-screen">
             {/* Navigation card */}
-            <div className="md:flex flex-col gap-6 text-white bg-gray-800 p-5 rounded-2xl w-fit fixed h-fit hidden">
-                <a href=""><LayoutDashboard /></a>
+            <div className="lg:flex flex-col gap-6 text-white bg-gray-800 p-5 rounded-4xl w-fit fixed h-fit hidden">
+                <a href="" className="bg-white text-gray-800 rounded-lg p-1"><LayoutDashboard /></a>
                 <a href=""><User /></a>
                 <a href=""><Computer /></a>
                 <a href=""><EditIcon /></a>
                 <a href=""><Mail /></a>
             </div>
-            <h1 className="text-primary text-8xl font-black text-center mb-4">Developer</h1>
+            <h1 className="text-primary md:text-8xl font-black text-center mb-4 text-6xl">Developer</h1>
             {/* Hero section */}
-            <div className="grid xl:grid-cols-3 lg:grid-cols-2 items-start gap-6 xl:gap-10">
+            <div className="grid md:grid-cols-2 grid-cols-1 items-start gap-6 xl:gap-10">
                 {/* Profile Card */}
-                <div className="border-2 border-l-primary border-t-primary border-gray-200 bg-gray-800 rounded-tl-[80px] rounded-br-[80px] flex flex-col gap-3 items-center p-4 mx-auto lg:ml-24">
+                <div className="border-2 border-l-primary border-t-primary border-gray-200 bg-gray-800 rounded-tl-[80px] rounded-br-[80px] flex flex-col gap-3 items-center md:p-4 p-2 mx-auto">
                     <img src="./hero-image.jpg" alt="my picture" className="border-3 border-primary rounded-full w-[100px] h-[100px] object-cover" />
                     <h3 className="text-gray-100 text-lg font-bold">Philippe</h3>
                     <p className="text-gray-300 text-sm">Full-stack Developer</p>
@@ -57,30 +57,36 @@ const Home = () => {
                 </div>
 
                 {/* Devloper Part */}
-                <div className="flex flex-col gap-5 min-w-fit w-full items-center justify-center">
-                    <div className="text-white">
-                        <p className="text-primary/80 text-xs">&lt;h1&gt;</p>
-                        <h1 className="leading-[0.9] tracking-tighter md:text-4xl text-5xl ml-2 font-extrabold">
-                            I Build Scalable <br /> <span className="text-primary">Digital Systems.</span>
-                        </h1>
-                        <p className="text-primary/80 text-xs">&lt;/h1&gt;</p>
-                    </div>
+                <div className="flex flex-col gap-5 items-center md:items-start w-full md:w-fit mx-auto md:mx-0">
+                    <div className="flex flex-col items-start w-fit">
+                        <div className="text-white w-fit">
+                            <p className="text-primary/80 text-xs">&lt;h1&gt;</p>
+                            <h1 className="leading-[0.9] tracking-tighter text-4xl lg:text-5xl ml-4 font-extrabold w-fit">
+                                I Build Scalable <br /> <span className="text-primary">Digital Systems.</span>
+                            </h1>
+                            <p className="text-primary/80 text-xs">&lt;/h1&gt;</p>
+                        </div>
 
-                    <div className="text-gray-300">
-                        <p className="text-primary/80 text-xs">&lt;p&gt;</p>
-                        <p className="tracking-tighter ml-2">
-                            I help business grow by crafting amazing web experiences. <br /> If you're lokking for a web deloper that likes to get stuff done,
-                        </p>
-                        <p className="text-primary/80 text-xs">&lt;p&gt;</p>
+                        <div className="text-gray-300 w-fit max-w-[500px]">
+                            <p className="text-primary/80 text-xs">&lt;p&gt;</p>
+                            <p className="tracking-tighter ml-4">
+                                I help business grow by crafting amazing web experiences. <br /> If you're looking for a web developer <br />that likes to get stuff done,
+                            </p>
+                            <p className="text-primary/80 text-xs">&lt;/p&gt;</p>
+                        </div>
+
+                        <div className="flex items-start w-fit mt-5">
+                            <a href="#" className="flex gap-2 items-center text-4xl"><span className="text-primary">Let's Talk</span> <Mail className="text-primary" size={31} /></a>
+                        </div>
                     </div>
                 </div>
 
                 {/* The number of part */}
-                <div className="flex flex-col gap-5 bg-gray-800 p-7 rounded-2xl w-fit mx-auto">
+                {/* <div className="flex flex-col gap-5 bg-gray-800 p-7 rounded-2xl w-fit mx-auto">
                     <p className="text-gray-300 flex gap-2"><span className="text-primary text-4xl font-bold">4</span> Programming <br />languages</p>
                     <p className="text-gray-300 flex gap-2"><span className="text-primary text-4xl font-bold">6</span> Devlopement <br />Tools</p>
                     <p className="text-gray-300 flex gap-2"><span className="text-primary text-4xl font-bold">4</span> Years of<br />Experience</p>
-                </div>
+                </div> */}
 
             </div>
         </div >

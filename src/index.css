@@ -2,11 +2,13 @@
 
 @theme {
     --color-primary: #3B82F6;
+    --color-nav: #41b4fb;
 }
 
 body {
     font-family: monospace;
     background-color: #0F172A;
+    /* color: #; */
 }
 
 .hide-scrollbar::-webkit-scrollbar {
