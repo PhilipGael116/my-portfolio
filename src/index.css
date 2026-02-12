@@ -8,7 +8,7 @@
 body {
     font-family: monospace;
     background-color: #0F172A;
-    /* color: #; */
+    overflow-x: hidden;
 }
 
 .hide-scrollbar::-webkit-scrollbar {
@@ -18,4 +18,23 @@ body {
 .hide-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+@media (max-width: 450px) {
+    .i-build {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .i-build {
+        font-size: 2rem;
+    }
+}
+
+
+@media (max-width: 1124px) {
+    .nav-card {
+        display: none;
+    }
 }
