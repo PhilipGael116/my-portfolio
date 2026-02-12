@@ -8,3 +8,12 @@ body {
     font-family: monospace;
     background-color: #0F172A;
 }
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
