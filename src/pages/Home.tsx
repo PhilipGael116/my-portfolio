@@ -28,7 +28,7 @@ const Home = () => {
                     <div className="grid md:grid-cols-2 grid-cols-1 items-start gap-6 xl:gap-10">
                         {/* Profile Card */}
                         <div className="border-2 border-l-primary border-t-primary border-gray-200 bg-gray-800 rounded-tl-[80px] rounded-br-[80px] flex flex-col gap-3 items-center md:p-4 p-2 mx-auto">
-                            <img src="./hero-image.jpg" alt="my picture" className="border-3 border-primary rounded-full w-[100px] h-[100px] object-cover" />
+                            <img src="./hero-image.jpg" alt="my picture" className="border-3 border-primary rounded-full w-[100px] h-[100px] object-cover" loading="lazy" />
                             <h3 className="text-gray-100 text-lg font-bold">Philippe</h3>
                             <p className="text-gray-300 text-sm">Full-stack Developer</p>
 
