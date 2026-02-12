@@ -1,4 +1,3 @@
-import { Footer, Header } from "./components"
 import { Home } from "./pages"
 
 const App = () => {
