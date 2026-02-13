@@ -46,6 +46,10 @@ body {
     .profile-card {
         max-width: 250px;
     }
+
+    .globe {
+        max-width: 240px;
+    }
 }
 
 @media (max-width: 1124px) {

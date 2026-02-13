@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <div className="w-full">
             <header className="text-white lg:px-20 px-10 py-7 flex items-center justify-between w-full fixed top-0 left-0 z-100 bg-[#0F172A]/70 backdrop-blur-md border-b border-white/5">
-                <div className="text-lg font-bold">
+                <div className="text-lg font-bold tracking-tight">
                     <span className="text-primary">&lt;C/&gt;</span>PhilippeGael
                 </div>
                 <div className="text-md flex gap-6 items-center">

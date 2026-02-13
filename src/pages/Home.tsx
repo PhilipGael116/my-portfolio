@@ -116,7 +116,7 @@ const Home = () => {
             </div>
 
             <div className="about-cards relative z-30 py-15 px-10 lg:px-50 w-full grid grid-cols-1 lg:grid-cols-2 gap-10 ">
-                <div className="flex flex-col gap-10 h-full w-full min-w-[340px]">
+                <div className="flex flex-col gap-10 h-full w-full sm:min-w-[340px] globe">
                     <div className="flex-1 flex flex-col gap-6 text-gray-300">
                         <div className="bg-gray-800 p-8 rounded-3xl border border-white/5 h-full">
                             <p className="text-primary/80 text-xs mb-2">&lt;p&gt;</p>
