@@ -72,12 +72,12 @@ const Home = () => {
                         </div>
 
                         {/* Devloper Part */}
-                        <div className="flex flex-col gap-5 items-center justify-center w-full md:w-fit mx-auto md:mx-0">
+                        <div className="flex flex-col gap-5 items-start justify-center w-full h-full">
                             <div className="flex flex-col w-fit">
                                 <div className="text-white w-fit">
                                     <p className="text-primary/80 text-xs">&lt;h1&gt;</p>
                                     <h1 className="i-build leading-[0.9] tracking-tighter text-5xl md:text-4xl lg:text-5xl ml-4 font-extrabold w-fit">
-                                        I Build Scalable <br className="hidden" /> <span className="text-primary">Digital Systems.</span>
+                                        I Build Scalable <br className="hidden md:block" /> <span className="text-primary">Digital Systems.</span>
                                     </h1>
                                     <p className="text-primary/80 text-xs">&lt;/h1&gt;</p>
                                 </div>
@@ -145,7 +145,7 @@ const Home = () => {
 
             {/* My Strategy section */}
 
-            <div className="px-5 sm:px-45 w-full mt-20">
+            <div className="py-15 px-5 sm:px-50 w-full mt-20">
                 <div className="w-fit mb-10">
                     <div className="border-2 border-primary bg-gray-800 rounded-tl-[80px] rounded-br-[80px] px-8 py-3 text-2xl font-bold tracking-wider text-white">
                         My Strategy
