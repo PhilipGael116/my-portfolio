@@ -418,7 +418,7 @@ function Scene({ markers, config, onMarkerClick, onMarkerHover }: SceneProps) {
       <directionalLight
         position={[-config.radius * 3, config.radius, -config.radius * 2]}
         intensity={config.pointLightIntensity * 0.3}
-        color="#88ccff"
+        color="#ffffff"
       />
 
       {/* Rotating Globe with Markers */}

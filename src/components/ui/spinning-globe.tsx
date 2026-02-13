@@ -1,5 +1,5 @@
 "use client";
-import { Globe3D, type GlobeMarker } from "@/components/ui/3d-globe";
+import { Globe3D, type GlobeMarker } from "./3d-globe";
 
 const sampleMarkers: GlobeMarker[] = [
     {
@@ -26,65 +26,11 @@ const sampleMarkers: GlobeMarker[] = [
         src: "https://assets.aceternity.com/avatars/4.webp",
         label: "Sydney",
     },
-    {
-        lat: 48.8566,
-        lng: 2.3522,
-        src: "https://assets.aceternity.com/avatars/5.webp",
-        label: "Paris",
-    },
-    {
-        lat: 28.6139,
-        lng: 77.209,
-        src: "https://assets.aceternity.com/avatars/6.webp",
-        label: "New Delhi",
-    },
-    {
-        lat: 55.7558,
-        lng: 37.6173,
-        src: "https://assets.aceternity.com/avatars/7.webp",
-        label: "Moscow",
-    },
-    {
-        lat: -22.9068,
-        lng: -43.1729,
-        src: "https://assets.aceternity.com/avatars/8.webp",
-        label: "Rio de Janeiro",
-    },
-    {
-        lat: 31.2304,
-        lng: 121.4737,
-        src: "https://assets.aceternity.com/avatars/9.webp",
-        label: "Shanghai",
-    },
-    {
-        lat: 25.2048,
-        lng: 55.2708,
-        src: "https://assets.aceternity.com/avatars/10.webp",
-        label: "Dubai",
-    },
-    {
-        lat: -34.6037,
-        lng: -58.3816,
-        src: "https://assets.aceternity.com/avatars/11.webp",
-        label: "Buenos Aires",
-    },
-    {
-        lat: 1.3521,
-        lng: 103.8198,
-        src: "https://assets.aceternity.com/avatars/12.webp",
-        label: "Singapore",
-    },
-    {
-        lat: 37.5665,
-        lng: 126.978,
-        src: "https://assets.aceternity.com/avatars/13.webp",
-        label: "Seoul",
-    },
 ];
 
 export function SpinningGlobe() {
     return (
-        <div className="relative h-full w-full overflow-hidden rounded-xl p-10 shadow-sm ring-1 shadow-black/10 ring-black/10 bg-gray-800 border border-white/5">
+        <div className="relative h-full w-full overflow-hidden rounded-xl p-10 shadow-sm ring-1 shadow-black/10 ring-black/10 bg-gray-800 border border-white/5 min-w-[340px]">
             <h2 className="relative z-10 mb-4 text-xl sm:text-2xl font-bold text-gray-300 pointer-events-none">
                 I'm very flexible with time zone communications
             </h2>
@@ -92,18 +38,17 @@ export function SpinningGlobe() {
                 className="absolute -bottom-96 left-0 h-[700px]"
                 markers={sampleMarkers}
                 config={{
-                    atmosphereColor: "#4da6ff",
-                    atmosphereIntensity: 20,
-                    bumpScale: 5,
-                    autoRotateSpeed: 0.3,
-                }}
-                onMarkerClick={(marker) => {
-                    console.log("Clicked marker:", marker.label);
-                }}
-                onMarkerHover={(marker) => {
-                    if (marker) {
-                        console.log("Hovering:", marker.label);
-                    }
+                    radius: 2,
+                    atmosphereColor: "#ffffff",
+                    showAtmosphere: true,
+                    atmosphereIntensity: 0,
+                    atmosphereBlur: 4,
+                    autoRotateSpeed: 0.8,
+                    initialRotation: { x: 0.2, y: 0.5 },
+                    showWireframe: false,
+                    wireframeColor: "#ffffff",
+                    ambientIntensity: 0.8,
+                    pointLightIntensity: 2.2,
                 }}
             />
         </div>

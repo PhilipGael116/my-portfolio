@@ -54,6 +54,13 @@ body {
     }
 }
 
+@media (max-width: 1080px) {
+    .about-cards {
+        display: grid !important;
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+}
+
 /* @theme inline {
     --radius-sm: calc(var(--radius) - 4px);
     --radius-md: calc(var(--radius) - 2px);

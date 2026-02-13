@@ -107,7 +107,7 @@ const Home = () => {
             </div>
 
             {/* About Section */}
-            <div className="pl-10 pr-10 lg:px-50 w-full mt-20" id="about">
+            <div className="px-10 lg:px-45 w-full mt-20" id="about">
                 <div className="w-fit">
                     <div className="border-2 border-primary bg-gray-800 rounded-tl-[80px] rounded-br-[80px] px-8 py-3 text-2xl font-bold tracking-wider text-white">
                         About Me
@@ -115,9 +115,8 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="relative z-30 py-15 pl-10 lg:pl-64 pr-10 lg:pr-24 w-full grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div className="max-w-7xl mx-auto flex flex-col gap-10 h-full w-full">
-
+            <div className="about-cards relative z-30 py-15 px-10 lg:px-50 w-full grid grid-cols-1 lg:grid-cols-2 gap-10 ">
+                <div className="flex flex-col gap-10 h-full w-full min-w-[340px]">
                     <div className="flex-1 flex flex-col gap-6 text-gray-300">
                         <div className="bg-gray-800 p-8 rounded-3xl border border-white/5 h-full">
                             <p className="text-primary/80 text-xs mb-2">&lt;p&gt;</p>
