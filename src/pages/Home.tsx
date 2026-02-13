@@ -3,7 +3,7 @@ import { GridBackground } from "../components/ui/Background"
 import { Header } from "../components"
 import { FlipWords } from "../components/ui/flip-words"
 import { SpinningGlobe } from "../components/ui/spinning-globe"
-import { CanvasRevealEffect, Card, Icon } from "@/components/ui/canvas-reveal-effect";
+import { CanvasRevealEffect, Card } from "@/components/ui/canvas-reveal-effect";
 
 const Home = () => {
     const titles = ["Developer", "Designer", "Engineer", "Architect"]
@@ -156,7 +156,6 @@ const Home = () => {
                     {/* Card 1: Cyan/Teal - Planning */}
                     <Card
                         title="Planning & Strategy"
-                        icon={<Icon />}
                         description="We'll collaborate to map out your website's goals, target audience, and key functionalities."
                     >
                         <CanvasRevealEffect
@@ -173,7 +172,6 @@ const Home = () => {
                     {/* Card 2: Purple/Violet - Development */}
                     <Card
                         title="Development & Build"
-                        icon={<Icon />}
                         description="From design to deployment, I'll build your project with clean code and modern technologies."
                     >
                         <CanvasRevealEffect
@@ -190,7 +188,6 @@ const Home = () => {
                     {/* Card 3: Blue - Launch (matches your primary color) */}
                     <Card
                         title="Launch & Scale"
-                        icon={<Icon />}
                         description="Ensuring smooth deployment and providing ongoing support as your project grows."
                     >
                         <CanvasRevealEffect
