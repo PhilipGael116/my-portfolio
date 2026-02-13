@@ -45,16 +45,12 @@ body {
 }
 
 @media (max-width: 350px) {
-    .i-build {
+    /* .i-build {
         font-size: 1rem;
-    }
+    } */
 
     .profile-card {
         max-width: 250px;
-    }
-
-    .globe {
-        max-width: 240px;
     }
 }
 

@@ -3,6 +3,7 @@ import { GridBackground } from "../components/ui/Background"
 import { Header } from "../components"
 import { FlipWords } from "../components/ui/flip-words"
 import { SpinningGlobe } from "../components/ui/spinning-globe"
+import { CanvasRevealEffect, Card, Icon } from "@/components/ui/canvas-reveal-effect";
 
 const Home = () => {
     const titles = ["Developer", "Designer", "Engineer", "Architect"]
@@ -11,7 +12,7 @@ const Home = () => {
         <GridBackground>
             <div>
                 <Header />
-                <div className="px-10 lg:px-24 py-30 min-h-screen">
+                <div className="px-5 sm:px-24 py-30 min-h-screen">
                     {/* Navigation card */}
                     <div className="nav-card lg:flex flex-col gap-6 text-white bg-gray-800 p-5 rounded-4xl w-fit fixed h-fit hidden z-100">
                         <a href="#home" className="bg-white text-gray-800 rounded-lg p-1"><LayoutDashboard /></a>
@@ -71,12 +72,12 @@ const Home = () => {
                         </div>
 
                         {/* Devloper Part */}
-                        <div className="flex flex-col gap-5 items-center md:items-start w-full md:w-fit mx-auto md:mx-0">
-                            <div className="flex flex-col items-start w-fit">
+                        <div className="flex flex-col gap-5 items-center justify-center w-full md:w-fit mx-auto md:mx-0">
+                            <div className="flex flex-col w-fit">
                                 <div className="text-white w-fit">
                                     <p className="text-primary/80 text-xs">&lt;h1&gt;</p>
                                     <h1 className="i-build leading-[0.9] tracking-tighter text-5xl md:text-4xl lg:text-5xl ml-4 font-extrabold w-fit">
-                                        I Build Scalable <br /> <span className="text-primary">Digital Systems.</span>
+                                        I Build Scalable <br className="hidden" /> <span className="text-primary">Digital Systems.</span>
                                     </h1>
                                     <p className="text-primary/80 text-xs">&lt;/h1&gt;</p>
                                 </div>
@@ -107,7 +108,7 @@ const Home = () => {
             </div>
 
             {/* About Section */}
-            <div className="px-10 lg:px-45 w-full mt-20" id="about">
+            <div className="px-5 sm:px-45 w-full mt-20 scroll-mt-30" id="about">
                 <div className="w-fit">
                     <div className="border-2 border-primary bg-gray-800 rounded-tl-[80px] rounded-br-[80px] px-8 py-3 text-2xl font-bold tracking-wider text-white">
                         About Me
@@ -115,10 +116,10 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="about-cards relative z-30 py-15 px-10 lg:px-50 w-full grid grid-cols-1 lg:grid-cols-2 gap-10 ">
-                <div className="flex flex-col gap-10 h-full w-full sm:min-w-[340px] globe">
+            <div className="about-cards relative z-30 py-15 px-5 sm:px-50 w-full grid grid-cols-1 lg:grid-cols-2 gap-10 ">
+                <div className="flex flex-col gap-10 h-full w-full sm:min-w-[340px]">
                     <div className="flex-1 flex flex-col gap-6 text-gray-300">
-                        <div className="bg-gray-800 p-8 rounded-3xl border border-white/5 h-full">
+                        <div className="bg-gray-800 sm:p-8 p-3 rounded-3xl border border-white/5 h-full">
                             <p className="text-primary/80 text-xs mb-2">&lt;p&gt;</p>
                             <div className="flex flex-col gap-4 text-lg leading-relaxed ml-4">
                                 <p className="text-sm">
@@ -140,6 +141,69 @@ const Home = () => {
                 </div>
 
                 <SpinningGlobe />
+            </div>
+
+            {/* My Strategy section */}
+
+            <div className="px-5 sm:px-45 w-full mt-20">
+                <div className="w-fit mb-10">
+                    <div className="border-2 border-primary bg-gray-800 rounded-tl-[80px] rounded-br-[80px] px-8 py-3 text-2xl font-bold tracking-wider text-white">
+                        My Strategy
+                    </div>
+                </div>
+
+                <div className="w-full min-h-[500px] relative grid grid-cols-1 lg:grid-cols-3 gap-10">
+                    {/* Card 1: Cyan/Teal - Planning */}
+                    <Card
+                        title="Planning & Strategy"
+                        icon={<Icon />}
+                        description="We'll collaborate to map out your website's goals, target audience, and key functionalities."
+                    >
+                        <CanvasRevealEffect
+                            animationSpeed={5}
+                            containerClassName="bg-teal-900"
+                            colors={[
+                                [0, 217, 255],    // Bright Cyan
+                            ]}
+                            dotSize={3}
+                            showGradient={false}
+                        />
+                    </Card>
+
+                    {/* Card 2: Purple/Violet - Development */}
+                    <Card
+                        title="Development & Build"
+                        icon={<Icon />}
+                        description="From design to deployment, I'll build your project with clean code and modern technologies."
+                    >
+                        <CanvasRevealEffect
+                            animationSpeed={5}
+                            containerClassName="bg-purple-900"
+                            colors={[
+                                [168, 85, 247],   // Vibrant Purple
+                            ]}
+                            dotSize={3}
+                            showGradient={false}
+                        />
+                    </Card>
+
+                    {/* Card 3: Blue - Launch (matches your primary color) */}
+                    <Card
+                        title="Launch & Scale"
+                        icon={<Icon />}
+                        description="Ensuring smooth deployment and providing ongoing support as your project grows."
+                    >
+                        <CanvasRevealEffect
+                            animationSpeed={5}
+                            containerClassName="bg-blue-900"
+                            colors={[
+                                [59, 130, 246],   // Primary Blue
+                            ]}
+                            dotSize={3}
+                            showGradient={false}
+                        />
+                    </Card>
+                </div>
             </div>
 
         </GridBackground>
