@@ -9,16 +9,16 @@ const Home = () => {
 
     return (
         <GridBackground>
-            <div className="">
+            <div>
                 <Header />
-                <div className="lg:px-20 px-10 py-30 min-h-screen">
+                <div className="px-10 lg:px-24 py-30 min-h-screen">
                     {/* Navigation card */}
                     <div className="nav-card lg:flex flex-col gap-6 text-white bg-gray-800 p-5 rounded-4xl w-fit fixed h-fit hidden z-100">
-                        <a href="" className="bg-white text-gray-800 rounded-lg p-1"><LayoutDashboard /></a>
-                        <a href=""><User /></a>
-                        <a href=""><Computer /></a>
-                        <a href=""><EditIcon /></a>
-                        <a href=""><Mail /></a>
+                        <a href="#home" className="bg-white text-gray-800 rounded-lg p-1"><LayoutDashboard /></a>
+                        <a href="#about"><User /></a>
+                        <a href="#projects"><Computer /></a>
+                        <a href="#skills"><EditIcon /></a>
+                        <a href="#contact"><Mail /></a>
                     </div>
                     {/* Title flipper */}
                     <div className="text-center mb-4">
@@ -29,7 +29,7 @@ const Home = () => {
                     {/* Hero section */}
                     <div className="grid md:grid-cols-2 grid-cols-1 items-start gap-6 xl:gap-10">
                         {/* Profile Card */}
-                        <div className="profile-card border-2 border-l-primary border-t-primary border-gray-200 bg-gray-800 rounded-tl-[80px] rounded-br-[80px] flex flex-col gap-3 items-center md:p-4 p-2 mx-auto">
+                        <div className="profile-card border-2 border-l-primary border-t-primary border-gray-200 bg-gray-800 rounded-tl-[80px] rounded-br-[80px] flex flex-col gap-3 items-center sm:p-4 p-2 sm:w-[300px] mx-auto">
                             <img src="./hero-image.jpg" alt="my picture" className="border-3 border-primary rounded-full w-[100px] h-[100px] object-cover" loading="lazy" />
                             <h3 className="text-gray-100 text-lg font-bold">Philippe</h3>
                             <p className="text-gray-300 text-sm">Full-stack Developer</p>
@@ -90,7 +90,7 @@ const Home = () => {
                                 </div>
 
                                 <div className="flex items-start w-fit mt-5">
-                                    <a href="#" className="flex gap-2 items-center text-4xl"><span className="text-primary">Let's Talk</span> <Mail className="text-primary animate-pulse" size={31} /></a>
+                                    <a href="#" className="flex gap-2 items-center sm:text-4xl text-3xl"><span className="text-primary">Let's Talk</span> <Mail className="text-primary animate-pulse" size={31} /></a>
                                 </div>
                             </div>
                         </div>
@@ -107,7 +107,7 @@ const Home = () => {
             </div>
 
             {/* About Section */}
-            <div className="px-10 lg:px-24 w-full md:pl-50 mt-20">
+            <div className="pl-10 pr-10 lg:px-50 w-full mt-20" id="about">
                 <div className="w-fit">
                     <div className="border-2 border-primary bg-gray-800 rounded-tl-[80px] rounded-br-[80px] px-8 py-3 text-2xl font-bold tracking-wider text-white">
                         About Me
@@ -115,7 +115,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="relative z-30 py-24 px-10 lg:px-24 w-full md:pl-50 grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="relative z-30 py-15 pl-10 lg:pl-64 pr-10 lg:pr-24 w-full grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div className="max-w-7xl mx-auto flex flex-col gap-10 h-full w-full">
 
                     <div className="flex-1 flex flex-col gap-6 text-gray-300">

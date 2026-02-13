@@ -84,8 +84,8 @@ const sampleMarkers: GlobeMarker[] = [
 
 export function SpinningGlobe() {
     return (
-        <div className="relative h-full w-full overflow-hidden rounded-xl p-10 shadow-sm ring-1 shadow-black/10 ring-black/10 bg-gray-800">
-            <h2 className="mb-4 text-2xl font-bold text-gray-300">
+        <div className="relative h-full w-full overflow-hidden rounded-xl p-10 shadow-sm ring-1 shadow-black/10 ring-black/10 bg-gray-800 border border-white/5">
+            <h2 className="relative z-10 mb-4 text-xl sm:text-2xl font-bold text-gray-300 pointer-events-none">
                 I'm very flexible with time zone communications
             </h2>
             <Globe3D
