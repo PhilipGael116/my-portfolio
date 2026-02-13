@@ -19,15 +19,16 @@ const Home = () => {
                         <a href=""><EditIcon /></a>
                         <a href=""><Mail /></a>
                     </div>
+                    {/* Title flipper */}
                     <div className="text-center mb-4">
-                        <h1 className="text-white md:text-8xl font-black text-6xl inline-block">
+                        <h1 className="text-white md:text-8xl font-black text-5xl sm:text-6xl inline-block">
                             <FlipWords words={titles} className="text-primary" />
                         </h1>
                     </div>
                     {/* Hero section */}
                     <div className="grid md:grid-cols-2 grid-cols-1 items-start gap-6 xl:gap-10">
                         {/* Profile Card */}
-                        <div className="border-2 border-l-primary border-t-primary border-gray-200 bg-gray-800 rounded-tl-[80px] rounded-br-[80px] flex flex-col gap-3 items-center md:p-4 p-2 mx-auto">
+                        <div className="profile-card border-2 border-l-primary border-t-primary border-gray-200 bg-gray-800 rounded-tl-[80px] rounded-br-[80px] flex flex-col gap-3 items-center md:p-4 p-2 mx-auto">
                             <img src="./hero-image.jpg" alt="my picture" className="border-3 border-primary rounded-full w-[100px] h-[100px] object-cover" loading="lazy" />
                             <h3 className="text-gray-100 text-lg font-bold">Philippe</h3>
                             <p className="text-gray-300 text-sm">Full-stack Developer</p>
@@ -55,7 +56,7 @@ const Home = () => {
                             </div>
 
                             {/* My Skills */}
-                            <div className="flex gap-2 overflow-x-auto flex-nowrap max-w-[280px] hide-scrollbar">
+                            <div className="flex gap-2 overflow-x-auto flex-nowrap max-w-[200px] md:max-w-[280px] hide-scrollbar">
                                 <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0">HTML</p>
                                 <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0">CSS</p>
                                 <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0">JAVASCRIPT</p>

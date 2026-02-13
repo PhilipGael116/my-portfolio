@@ -20,15 +20,25 @@ body {
     scrollbar-width: none;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
     .i-build {
         font-size: 2.4rem;
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 430px) {
     .i-build {
         font-size: 2rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .i-build {
+        font-size: 1rem;
+    }
+
+    .profile-card {
+        max-width: 250px;
     }
 }
 
