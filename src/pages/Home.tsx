@@ -2,17 +2,18 @@ import { User, Computer, EditIcon, LayoutDashboard, Mail, LocateFixedIcon, ToolC
 import { GridBackground } from "../components/ui/Background"
 import { Header } from "../components"
 import { FlipWords } from "../components/ui/flip-words"
+import { SpinningGlobe } from "../components/ui/spinning-globe"
 
 const Home = () => {
     const titles = ["Developer", "Designer", "Engineer", "Architect"]
 
     return (
         <GridBackground>
-            <div className="h-auto md:h-screen md:fixed left-0 top-0 right-0">
+            <div className="">
                 <Header />
                 <div className="lg:px-20 px-10 py-30 min-h-screen">
                     {/* Navigation card */}
-                    <div className="nav-card lg:flex flex-col gap-6 text-white bg-gray-800 p-5 rounded-4xl w-fit fixed h-fit hidden">
+                    <div className="nav-card lg:flex flex-col gap-6 text-white bg-gray-800 p-5 rounded-4xl w-fit fixed h-fit hidden z-100">
                         <a href="" className="bg-white text-gray-800 rounded-lg p-1"><LayoutDashboard /></a>
                         <a href=""><User /></a>
                         <a href=""><Computer /></a>
@@ -106,9 +107,40 @@ const Home = () => {
             </div>
 
             {/* About Section */}
+            <div className="px-10 lg:px-24 w-full md:pl-50 mt-20">
+                <div className="w-fit">
+                    <div className="border-2 border-primary bg-gray-800 rounded-tl-[80px] rounded-br-[80px] px-8 py-3 text-2xl font-bold tracking-wider text-white">
+                        About Me
+                    </div>
+                </div>
+            </div>
 
-            <div className="">
+            <div className="relative z-30 py-24 px-10 lg:px-24 w-full md:pl-50 grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div className="max-w-7xl mx-auto flex flex-col gap-10 h-full w-full">
 
+                    <div className="flex-1 flex flex-col gap-6 text-gray-300">
+                        <div className="bg-gray-800 p-8 rounded-3xl border border-white/5 h-full">
+                            <p className="text-primary/80 text-xs mb-2">&lt;p&gt;</p>
+                            <div className="flex flex-col gap-4 text-lg leading-relaxed ml-4">
+                                <p className="text-sm">
+                                    My name is Philippe and I specialize in web development that utilizes <span className="text-primary font-bold">REACT</span>, <span className="text-primary font-bold">EXPRESS</span>, and <span className="text-primary font-bold">MONGODB</span>.
+                                </p>
+                                <p className="text-sm">
+                                    I am a highly motivated individual and eternal optimist dedicated to writing clear, concise, robust code that works. Striving to never stop learning and improving.
+                                </p>
+                                <p className="text-sm">
+                                    When I'm not coding, I am <span className="text-primary font-bold">writing blogs</span>, reading, or picking up some new hands-on art project like <span className="text-primary font-bold">Playing the Piano</span>.
+                                </p>
+                                <p className="text-sm">
+                                    I like to have my perspective and belief systems challenged so that I see the world through new eyes.
+                                </p>
+                            </div>
+                            <p className="text-primary/80 text-xs mt-2">&lt;/p&gt;</p>
+                        </div>
+                    </div>
+                </div>
+
+                <SpinningGlobe />
             </div>
 
         </GridBackground>
