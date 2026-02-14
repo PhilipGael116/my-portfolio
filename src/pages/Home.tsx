@@ -68,7 +68,7 @@ const Home = () => {
                                 <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0">MONGO DB</p>
                             </div>
 
-                            <button className="border-none bg-white text-gray-800 p-3 flex gap-2 items-center rounded-xl cursor-pointer">Downoload CV <Download className="animate-bounce" /> </button>
+                            <a href="assets/my-cv.pdf" className="border-none bg-white text-gray-800 p-3 flex gap-2 items-center rounded-xl cursor-pointer" download>Downoload CV <Download className="animate-bounce" /> </a>
                         </div>
 
                         {/* Devloper Part */}
