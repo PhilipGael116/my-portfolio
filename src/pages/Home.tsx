@@ -85,7 +85,7 @@ const Home = () => {
                                 <div className="text-gray-300 w-fit max-w-[500px] p-part">
                                     <p className="text-primary/80 text-xs">&lt;p&gt;</p>
                                     <p className="tracking-tighter ml-4">
-                                        I help business grow by crafting amazing web experiences. <br /> If you're looking for a web developer <br />that likes to get stuff done,
+                                        I help business grow by crafting amazing web experiences. <br className="hidden sm:block" /> If you're looking for a web developer <br />that likes to get stuff done,
                                     </p>
                                     <p className="text-primary/80 text-xs">&lt;/p&gt;</p>
                                 </div>

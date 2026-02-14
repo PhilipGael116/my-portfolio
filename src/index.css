@@ -51,9 +51,9 @@ body {
 }
 
 @media (max-width: 350px) {
-    /* .i-build {
-        font-size: 1rem;
-    } */
+    .i-build {
+        font-size: 1.3rem;
+    }
 
     .profile-card {
         max-width: 250px;
@@ -111,6 +111,35 @@ body {
 @media (max-width: 640px) {
     .p-part {
         padding-right: 8rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .p-part {
+        padding-right: 4rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .p-part {
+        padding-right: 2rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .p-part {
+        padding-right: 0.7rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .p-part p {
+        font-size: 0.8rem;
+    }
+
+    .p-part {
+        padding-right: 0;
+        padding-left: 0;
     }
 }
 
