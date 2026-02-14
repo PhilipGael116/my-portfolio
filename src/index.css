@@ -52,7 +52,7 @@ body {
 
 @media (max-width: 350px) {
     .i-build {
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 
     .profile-card {
