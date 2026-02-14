@@ -203,7 +203,7 @@ class GridSquare {
 export function CanvasRevealEffectDemo() {
     return (
         <>
-            <div className="py-20 flex flex-col lg:flex-row items-center justify-center bg-white dark:bg-black w-full gap-4 mx-auto px-8">
+            <div className="py-20 flex flex-col lg:flex-row items-center justify-center bg-black w-full gap-4 mx-auto px-8">
                 <Card title="Sheetal is Nisha">
                     <CanvasRevealEffect
                         animationSpeed={5.1}
@@ -221,7 +221,7 @@ export function CanvasRevealEffectDemo() {
                         dotSize={8}
                     />
                     {/* Radial gradient for the cute fade */}
-                    <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
+                    <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/90" />
                 </Card>
                 <Card title="Munni is Aditi">
                     <CanvasRevealEffect
