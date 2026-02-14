@@ -270,7 +270,14 @@ export const Card = ({
 
             {/* "Hover Me" text - visible when NOT hovered */}
             <div className={`absolute inset-0 flex items-center justify-center z-10 transition-opacity duration-300 ${hovered ? 'opacity-0' : 'opacity-100'}`}>
-                <p className="text-white/60 text-2xl font-semibold">Hover Me</p>
+                {/* Visible ONLY on touch devices (even if the window is large) */}
+                <span className="hidden pointer-coarse:inline text-white/60 text-2xl font-semibold">
+                    Click Me
+                </span>
+                {/* Visible ONLY on devices with a mouse (even if the window is tiny) */}
+                <span className="hidden pointer-fine:inline text-white/60 text-2xl font-semibold">
+                    Hover Me
+                </span>
             </div>
 
             {/* Content at bottom - only visible on hover */}
