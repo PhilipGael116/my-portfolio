@@ -26,6 +26,12 @@ body {
     scrollbar-width: none;
 }
 
+@media (max-width: 687px) {
+    .i-build {
+        font-size: 2.4rem;
+    }
+}
+
 @media (max-width: 500px) {
     .i-build {
         font-size: 2.4rem;
@@ -64,6 +70,47 @@ body {
     .about-cards {
         display: grid !important;
         grid-template-columns: repeat(1, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .i-build-container {
+        padding-right: 2rem;
+        padding-left: 6.25rem;
+    }
+}
+
+@media (max-width: 740px) {
+    .i-build-container {
+        padding-right: 2rem;
+        padding-left: 5.5rem;
+    }
+}
+
+@media (max-width: 730px) {
+    .i-build-container {
+        padding-right: 2rem;
+        padding-left: 4.5rem;
+    }
+}
+
+@media (max-width: 715px) {
+    .i-build-container {
+        padding-right: 2rem;
+        padding-left: 3rem;
+    }
+}
+
+@media (max-width: 687px) {
+    .i-build-container {
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .p-part {
+        padding-right: 8rem;
     }
 }
 

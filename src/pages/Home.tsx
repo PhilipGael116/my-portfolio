@@ -17,7 +17,7 @@ const Home = () => {
                     <div className="nav-card lg:flex flex-col gap-6 text-white bg-gray-800 p-5 rounded-4xl w-fit fixed h-fit hidden z-100">
                         <a href="#home" className="bg-white text-gray-800 rounded-lg p-1"><LayoutDashboard /></a>
                         <a href="#about"><User /></a>
-                        <a href="#projects"><Computer /></a>
+                        <a href="#my-strategy"><Computer /></a>
                         <a href="#skills"><EditIcon /></a>
                         <a href="#contact"><Mail /></a>
                     </div>
@@ -30,7 +30,7 @@ const Home = () => {
                     {/* Hero section */}
                     <div className="grid md:grid-cols-2 grid-cols-1 items-start gap-6 xl:gap-10">
                         {/* Profile Card */}
-                        <div className="profile-card border-2 border-l-primary border-t-primary border-gray-200 bg-gray-800 rounded-tl-[80px] rounded-br-[80px] flex flex-col gap-3 items-center sm:p-4 p-2 sm:w-[300px] mx-auto">
+                        <div className="profile-card border-2 border-l-primary border-t-primary border-gray-200 bg-gray-800 rounded-tl-[80px] rounded-br-[80px] flex flex-col gap-3 items-center p-4 w-[300px] mx-auto">
                             <img src="./hero-image.jpg" alt="my picture" className="border-3 border-primary rounded-full w-[100px] h-[100px] object-cover" loading="lazy" />
                             <h3 className="text-gray-100 text-lg font-bold">Philippe</h3>
                             <p className="text-gray-300 text-sm">Full-stack Developer</p>
@@ -68,12 +68,12 @@ const Home = () => {
                                 <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0">MONGO DB</p>
                             </div>
 
-                            <button className="border-none bg-white text-gray-800 p-3 flex gap-2 items-center rounded-xl cursor-pointer">Downoload CV <Download /> </button>
+                            <button className="border-none bg-white text-gray-800 p-3 flex gap-2 items-center rounded-xl cursor-pointer">Downoload CV <Download className="animate-bounce" /> </button>
                         </div>
 
                         {/* Devloper Part */}
-                        <div className="flex flex-col gap-5 items-start justify-center w-full h-full">
-                            <div className="flex flex-col w-fit">
+                        <div className="flex flex-col gap-5 items-center sm:items-start justify-center w-full h-full">
+                            <div className="i-build-container flex flex-col w-fit items-center sm:items-start">
                                 <div className="text-white w-fit">
                                     <p className="text-primary/80 text-xs">&lt;h1&gt;</p>
                                     <h1 className="i-build leading-[0.9] tracking-tighter text-5xl md:text-4xl lg:text-5xl ml-4 font-extrabold w-fit">
@@ -82,7 +82,7 @@ const Home = () => {
                                     <p className="text-primary/80 text-xs">&lt;/h1&gt;</p>
                                 </div>
 
-                                <div className="text-gray-300 w-fit max-w-[500px]">
+                                <div className="text-gray-300 w-fit max-w-[500px] p-part">
                                     <p className="text-primary/80 text-xs">&lt;p&gt;</p>
                                     <p className="tracking-tighter ml-4">
                                         I help business grow by crafting amazing web experiences. <br /> If you're looking for a web developer <br />that likes to get stuff done,
@@ -145,7 +145,7 @@ const Home = () => {
 
             {/* My Strategy section */}
 
-            <div className="py-15 px-5 sm:px-50 w-full mt-20">
+            <div className="py-15 px-5 sm:px-50 w-full mt-20 scroll-mt-15" id="my-strategy">
                 <div className="w-fit mb-10">
                     <div className="border-2 border-primary bg-gray-800 rounded-tl-[80px] rounded-br-[80px] px-8 py-3 text-2xl font-bold tracking-wider text-white">
                         My Strategy
