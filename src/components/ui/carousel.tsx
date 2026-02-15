@@ -1,7 +1,6 @@
 "use client";
 import { ArrowRight } from "lucide-react";
 import { useState, useRef, useId, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
 
 interface SlideData {

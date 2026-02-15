@@ -4,7 +4,6 @@ import { Header } from "../components"
 import { FlipWords } from "../components/ui/flip-words"
 import { SpinningGlobe } from "../components/ui/spinning-globe"
 import { CanvasRevealEffect, Card } from "@/components/ui/canvas-reveal-effect";
-import { CodeHead } from "../components/ui/code-head"
 import { CarouselDemo } from "../components/ui/carousel"
 
 const Home = () => {
