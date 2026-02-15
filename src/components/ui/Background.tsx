@@ -8,9 +8,9 @@ export function GridBackground({ children }: { children: React.ReactNode }) {
             <div
                 className={cn(
                     "fixed inset-0 pointer-events-none",
-                    "[background-size:40px_40px]",
-                    "[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
-                    "[mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
+                    "bg-size-[40px_40px]",
+                    "bg-[linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
+                    "mask-[radial-gradient(ellipse_at_center,transparent_20%,black)]"
                 )}
             />
 

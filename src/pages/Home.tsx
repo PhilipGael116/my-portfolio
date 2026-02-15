@@ -4,9 +4,15 @@ import { Header } from "../components"
 import { FlipWords } from "../components/ui/flip-words"
 import { SpinningGlobe } from "../components/ui/spinning-globe"
 import { CanvasRevealEffect, Card } from "@/components/ui/canvas-reveal-effect";
+import { CodeHead } from "../components/ui/code-head"
+import { CarouselDemo } from "../components/ui/carousel"
 
 const Home = () => {
     const titles = ["Developer", "Designer", "Engineer", "Architect"]
+
+    // const getNavigationItem = () => {
+    //     const item = onclick()
+    // }
 
     return (
         <GridBackground>
@@ -68,7 +74,7 @@ const Home = () => {
                                 <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0">MONGO DB</p>
                             </div>
 
-                            <a href="assets/my-cv.pdf" className="border-none bg-white text-gray-800 p-3 flex gap-2 items-center rounded-xl cursor-pointer" download>Downoload CV <Download className="animate-bounce" /> </a>
+                            <a href="/my-cv.pdf" className="border-none bg-white text-gray-800 p-3 flex gap-2 items-center rounded-xl cursor-pointer" download>Downoload CV <Download className="animate-bounce" /> </a>
                         </div>
 
                         {/* Devloper Part */}
@@ -201,6 +207,23 @@ const Home = () => {
                         />
                     </Card>
                 </div>
+            </div>
+
+            {/*  My works section */}
+
+            <div className="py-15 px-5 sm:px-50 w-full mt-20 scroll-mt-15 relative overflow-hidden" id="my-works">
+                <div className="relative z-10">
+                    <div className="w-fit">
+                        <p className="relative text-primary text-4xl font-bold border-b pb-2 border-primary 
+                            before:content-[''] before:absolute before:bottom-[-4px] before:left-[-4px] before:w-2 before:h-2 before:bg-primary before:rounded-full
+                            after:content-[''] after:absolute after:bottom-[-4px] after:right-[-4px] after:w-2 after:h-2 after:bg-primary after:rounded-full">
+                            Works
+                        </p>
+                    </div>
+                    <p className="text-gray-300 mt-4">I had the pleasure of working on these awesome projects</p>
+                </div>
+
+                <CarouselDemo />
             </div>
 
         </GridBackground>
