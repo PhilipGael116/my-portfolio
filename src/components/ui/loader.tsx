@@ -1,6 +1,6 @@
-import React from "react";
-import { LoaderOne } from "@/components/ui/loader";
+// import React from "react";
+// import { LoaderOne } from "@/components/ui/loader";
 
-export function LoaderOneDemo() {
-    return <LoaderOne />;
-}
+// export function LoaderOneDemo() {
+//     return <LoaderOne />;
+// }
