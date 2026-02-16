@@ -150,10 +150,14 @@ const Home = () => {
 
             {/* My Strategy section */}
 
-            <div className="py-15 px-5 sm:px-50 w-full mt-20 scroll-mt-15" id="my-strategy">
-                <div className="w-fit mb-10">
-                    <div className="border-2 border-primary bg-gray-800 rounded-tl-[80px] rounded-br-[80px] px-8 py-3 text-2xl font-bold tracking-wider text-white">
-                        My Strategy
+            <div className="py-15 px-5 sm:px-20 md:px-50 w-full mt-20 scroll-mt-15" id="my-strategy">
+                <div className="relative z-10 flex flex-col items-center mb-10">
+                    <div className="w-fit">
+                        <p className="relative text-primary text-4xl font-bold border-b pb-2 border-primary 
+                            before:content-[''] before:absolute before:bottom-[-4px] before:left-[-4px] before:w-2 before:h-2 before:bg-primary before:rounded-full
+                            after:content-[''] after:absolute after:bottom-[-4px] after:right-[-4px] after:w-2 after:h-2 after:bg-primary after:rounded-full">
+                            Strategy
+                        </p>
                     </div>
                 </div>
 
@@ -210,7 +214,7 @@ const Home = () => {
 
             {/*  My works section */}
 
-            <div className="py-15 px-5 sm:px-50 w-full mt-20 scroll-mt-15 relative overflow-hidden" id="my-works">
+            <div className="py-15 px-5 sm:px-20 md:px-50 w-full mt-20 scroll-mt-15 relative overflow-hidden" id="my-works">
                 <div className="relative z-10 flex flex-col items-center">
                     <div className="w-fit">
                         <p className="relative text-primary text-4xl font-bold border-b pb-2 border-primary 

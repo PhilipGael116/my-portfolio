@@ -59,7 +59,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
                     current === index ? "opacity-100 visible" : "opacity-0 invisible"
                 )}
             >
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold  relative text-black mb-40">
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold  relative text-black sm:mb-40 mb-25">
                     {title}
                 </h2>
                 <div className="flex justify-center mt-4">
@@ -117,7 +117,7 @@ export default function Carousel({ slides }: CarouselProps) {
     const id = useId();
 
     return (
-        <div className="relative w-full h-[50vmin]" aria-labelledby={`carousel-heading-${id}`}>
+        <div className="relative w-full sm:h-[calc(50vmin)] h-[calc(50vmin+7.3rem)]" aria-labelledby={`carousel-heading-${id}`}>
             <ul
                 className="absolute flex gap-(--slide-gap) transition-transform duration-600 ease-in-out [--slide-width:70vmin] sm:[--slide-width:45vmin] [--slide-gap:4vmin]"
                 style={{
@@ -136,7 +136,7 @@ export default function Carousel({ slides }: CarouselProps) {
                 ))}
             </ul>
 
-            <div className="absolute flex justify-center w-full gap-4 top-[calc(100%+2rem)]">
+            <div className="flex absolute justify-center w-full gap-4 top-[calc(100%+2rem)]">
                 <CarouselControl
                     type="previous"
                     title="Go to previous slide"
