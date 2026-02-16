@@ -23,7 +23,7 @@ const Home = () => {
                         <a href="#home" className="bg-white text-gray-800 rounded-lg p-1"><LayoutDashboard /></a>
                         <a href="#about"><User /></a>
                         <a href="#my-strategy"><Computer /></a>
-                        <a href="#skills"><EditIcon /></a>
+                        <a href="#my-works"><EditIcon /></a>
                         <a href="#contact"><Mail /></a>
                     </div>
                     {/* Title flipper */}
@@ -211,7 +211,7 @@ const Home = () => {
             {/*  My works section */}
 
             <div className="py-15 px-5 sm:px-50 w-full mt-20 scroll-mt-15 relative overflow-hidden" id="my-works">
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col items-center">
                     <div className="w-fit">
                         <p className="relative text-primary text-4xl font-bold border-b pb-2 border-primary 
                             before:content-[''] before:absolute before:bottom-[-4px] before:left-[-4px] before:w-2 before:h-2 before:bg-primary before:rounded-full
