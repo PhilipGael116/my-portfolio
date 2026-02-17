@@ -1,4 +1,4 @@
-import { User, Cpu, Briefcase, LayoutDashboard, Mail, MapPin, Link, Download, GraduationCap, Zap, Rocket, Layers } from "lucide-react"
+import { User, Cpu, Briefcase, LayoutDashboard, Mail, MapPin, Link, Download, GraduationCap, Zap, Rocket, Layers, Send } from "lucide-react"
 import { GridBackground } from "../components/ui/Background"
 import { Header } from "../components"
 import { FlipWords } from "../components/ui/flip-words"
@@ -7,12 +7,32 @@ import { CanvasRevealEffect, Card } from "@/components/ui/canvas-reveal-effect";
 import { CarouselDemo } from "../components/ui/carousel"
 import { InfiniteMovingCardsDemo } from "@/components/ui/testimonials"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const Home = () => {
     const titles = ["Developer", "Designer", "Engineer", "Architect"];
 
-    const [activeNav, setActiveNav] = useState("#home");
+    const [activeNav, setActiveNav] = useState("");
+
+    useEffect(() => {
+        const sections = document.querySelectorAll("section");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setActiveNav(`#${entry.target.id}`);
+                }
+            });
+        },
+            { threshold: 0.6 }
+        );
+
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+
+        return () => observer.disconnect();
+    }, [])
 
 
 
@@ -23,18 +43,18 @@ const Home = () => {
                 <div className="px-5 sm:px-24 py-30 min-h-screen">
                     {/* Navigation card */}
                     <div className="nav-card lg:flex flex-col gap-6 text-white bg-gray-800 p-5 rounded-4xl w-fit fixed h-fit hidden z-100">
-                        <a href="#home" title="Home" onClick={() => setActiveNav("#home")} className={`p-2 ${activeNav === "#home" ? "bg-white text-gray-800 rounded-lg transition-all duration-500" : ""}`}><LayoutDashboard size={20} /></a>
-                        <a href="#about" title="About" onClick={() => setActiveNav("#about")} className={`p-2 ${activeNav === "#about" ? "bg-white text-gray-800 rounded-lg transition-all duration-500" : ""}`}><User size={20} /></a>
-                        <a href="#my-strategy" title="Strategy" onClick={() => setActiveNav("#my-strategy")} className={`p-2 ${activeNav === "#my-strategy" ? "bg-white text-gray-800 rounded-lg transition-all duration-500" : ""}`}><Zap size={20} /></a>
-                        <a href="#my-works" title="Works" onClick={() => setActiveNav("#my-works")} className={`p-2 ${activeNav === "#my-works" ? "bg-white text-gray-800 rounded-lg transition-all duration-500" : ""}`}><Briefcase size={20} /></a>
-                        <a href="#contact" title="Contact" onClick={() => setActiveNav("#contact")} className={`p-2 ${activeNav === "#contact" ? "bg-white text-gray-800 rounded-lg transition-all duration-500" : ""}`}><Mail size={20} /></a>
+                        <a href="#home" title="Home" onClick={() => setActiveNav("#home")} className={`rounded-lg transition-all duration-300 p-2 ${activeNav === "#home" ? "bg-white text-gray-800" : ""}`}><LayoutDashboard size={20} /></a>
+                        <a href="#about" title="About" onClick={() => setActiveNav("#about")} className={`rounded-lg transition-all duration-300 p-2 ${activeNav === "#about" ? "bg-white text-gray-800" : ""}`}><User size={20} /></a>
+                        <a href="#my-strategy" title="Strategy" onClick={() => setActiveNav("#my-strategy")} className={`rounded-lg transition-all duration-300 p-2 ${activeNav === "#my-strategy" ? "bg-white text-gray-800" : ""}`}><Zap size={20} /></a>
+                        <a href="#my-works" title="Works" onClick={() => setActiveNav("#my-works")} className={`rounded-lg transition-all duration-300 p-2 ${activeNav === "#my-works" ? "bg-white text-gray-800" : ""}`}><Briefcase size={20} /></a>
+                        <a href="#contact" title="Contact" onClick={() => setActiveNav("#contact")} className={`rounded-lg transition-all duration-300 p-2 ${activeNav === "#contact" ? "bg-white text-gray-800" : ""}`}><Mail size={20} /></a>
                     </div>
                     {/* Title flipper */}
-                    <div className="text-center mb-4 scroll-mt-30" id="home">
+                    <section className="text-center mb-4 scroll-mt-30" id="home">
                         <h1 className="text-white md:text-8xl font-black text-5xl sm:text-6xl inline-block">
                             <FlipWords words={titles} className="text-primary" />
                         </h1>
-                    </div>
+                    </section>
                     {/* Hero section */}
                     <div className="grid md:grid-cols-2 grid-cols-1 items-start gap-6 xl:gap-10">
                         {/* Profile Card */}
@@ -61,7 +81,7 @@ const Home = () => {
 
                                 <p className="flex items-center gap-2">
                                     <Link size={14} className="text-primary" />
-                                    <a href="https://www.philippegael.com" target="_blank" className="hover:text-primary transition-colors text-xs">www.philippegael.com</a>
+                                    <a href="https://www.philippegael.online" target="_blank" className="hover:text-primary transition-colors text-xs">www.philippegael.online</a>
                                 </p>
                             </div>
 
@@ -116,13 +136,13 @@ const Home = () => {
             </div>
 
             {/* About Section */}
-            <div className="px-5 sm:px-45 w-full mt-20 scroll-mt-30" id="about">
+            <section className="px-5 sm:px-45 w-full mt-20 scroll-mt-30" id="about">
                 <div className="w-fit">
                     <div className="border-2 border-primary bg-gray-800 rounded-tl-[80px] rounded-br-[80px] px-8 py-3 text-2xl font-bold tracking-wider text-white">
                         About Me
                     </div>
                 </div>
-            </div>
+            </section>
 
             <div className="about-cards relative z-30 py-15 px-5 sm:px-50 w-full grid grid-cols-1 lg:grid-cols-2 gap-10 ">
                 <div className="flex flex-col gap-10 h-full w-full sm:min-w-[340px]">
@@ -153,7 +173,7 @@ const Home = () => {
 
             {/* My Strategy section */}
 
-            <div className="py-15 px-5 sm:px-20 md:px-50 w-full mt-20 scroll-mt-15" id="my-strategy">
+            <section className="py-15 px-5 sm:px-20 md:px-50 w-full mt-20 scroll-mt-15" id="my-strategy">
                 <div className="relative z-10 flex flex-col items-center mb-10">
                     <div className="w-fit">
                         <p className="relative text-primary text-4xl font-bold border-b pb-2 border-primary 
@@ -216,11 +236,11 @@ const Home = () => {
                         />
                     </Card>
                 </div>
-            </div>
+            </section>
 
             {/*  My works section */}
 
-            <div className="py-15 px-5 sm:px-20 md:px-50 w-full mt-20 scroll-mt-15 relative overflow-hidden" id="my-works">
+            <section className="py-15 px-5 sm:px-20 md:px-50 w-full mt-20 scroll-mt-15 relative overflow-hidden" id="my-works">
                 <div className="relative z-10 flex flex-col items-center">
                     <div className="w-fit">
                         <p className="relative text-primary text-4xl font-bold border-b pb-2 border-primary 
@@ -233,10 +253,10 @@ const Home = () => {
                 </div>
 
                 <CarouselDemo />
-            </div>
+            </section>
 
             {/* Testimonials section */}
-            <div className="py-15 px-5 sm:px-20 md:px-50 w-full mt-20 scroll-mt-15" id="testimonials">
+            <section className="py-15 px-5 sm:px-20 md:px-50 w-full mt-20 scroll-mt-15" id="testimonials">
                 <div className="relative z-10 flex flex-col items-center mb-10">
                     <div className="w-fit">
                         <p className="relative text-primary text-4xl font-bold border-b pb-2 border-primary 
@@ -248,7 +268,97 @@ const Home = () => {
                 </div>
 
                 <InfiniteMovingCardsDemo />
-            </div>
+            </section>
+
+            {/* Blogs section */}
+            <section className="py-15 px-5 sm:px-20 md:px-50 w-full mt-20 scroll-mt-15" id="blogs">
+                <div className="relative z-10 flex flex-col items-center mb-6">
+                    <div className="w-fit">
+                        <p className="relative text-primary text-4xl font-bold border-b pb-2 border-primary 
+                            before:content-[''] before:absolute before:bottom-[-4px] before:left-[-4px] before:w-2 before:h-2 before:bg-primary before:rounded-full
+                            after:content-[''] after:absolute after:bottom-[-4px] after:right-[-4px] after:w-2 after:h-2 after:bg-primary after:rounded-full">
+                            Blogs
+                        </p>
+                    </div>
+                    <p className="text-gray-300 mt-4">I had the pleasure of working on these awesome projects</p>
+                </div>
+
+                <div className="flex items-center flex-col gap-6">
+                    {/* First Blog */}
+
+                    <div className="flex gap-5">
+                        <img src="/hero-image.jpg" alt="" className="max-w-[250px] max-h-[200px] rounded-2xl" />
+                        <div className="flex flex-col gap-5">
+                            <a href="#" className="text-primary sm:text-3xl text-xl leading-[0.9]">What does it take to onlinee a web developer?</a>
+                            <a href="#" className="text-gray-300">Web developement, also know as website developement, encompasses a variety of tasks and processes involved in creating website for the internet...</a>
+                            <p className="text-primary cursor-pointer hover:text-primary/50">Read More&gt;&gt;</p>
+
+                            <div className="flex items-center gap-3 mt-3">
+                                <p className="bg-white/15 rounded-2xl p-2 text-gray-300">Web Developer</p>
+                                <p className="text-gray-300"><span className="font-bold">Text</span> Philippe</p>
+                                <p className="text-gray-300 font-extralight"><span className="font-bold">Date</span> 10.Oct 2023</p>
+                                <p className="text-gray-300 font-extralight"><span className="font-bold">Read</span> 1 Min</p>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Second Blog */}
+
+                    <div className="flex gap-5">
+                        <img src="/hero-image.jpg" alt="" className="max-w-[250px] max-h-[200px] rounded-2xl" />
+                        <div className="flex flex-col gap-5">
+                            <a href="#" className="text-primary sm:text-3xl text-xl leading-[0.9]">What does it take to become a web developer?</a>
+                            <p className="text-gray-300">Web developement, also know as website developement, encompasses a variety of tasks and processes involved in creating website for the internet...</p>
+                            <p className="text-primary cursor-pointer hover:text-primary/50">Read More&gt;&gt;</p>
+
+                            <div className="flex items-center gap-3 mt-3">
+                                <p className="bg-white/15 rounded-2xl p-2 text-gray-300">Web Developer</p>
+                                <p className="text-gray-300"><span className="font-bold">Text</span> Philippe</p>
+                                <p className="text-gray-300 font-extralight"><span className="font-bold">Date</span> 10.Oct 2023</p>
+                                <p className="text-gray-300 font-extralight"><span className="font-bold">Read</span> 1 Min</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" className="bg-primary p-2 text-slate-950 text-xl rounded-2xl mt-1">View more</a>
+                </div>
+            </section>
+
+            {/* Contact section */}
+            <section className="py-15 px-5 sm:px-20 md:px-50 w-full mt-20 scroll-mt-15" id="testimonials">
+                <div className="relative z-10 flex flex-col items-center mb-6">
+                    <div className="w-fit">
+                        <p className="relative text-primary text-4xl font-bold border-b pb-2 border-primary 
+                            before:content-[''] before:absolute before:bottom-[-4px] before:left-[-4px] before:w-2 before:h-2 before:bg-primary before:rounded-full
+                            after:content-[''] after:absolute after:bottom-[-4px] after:right-[-4px] after:w-2 after:h-2 after:bg-primary after:rounded-full">
+                            Contact
+                        </p>
+                    </div>
+                    <p className="text-gray-300 mt-4">I'm currenlt available for freelance work</p>
+                </div>
+
+                <div className="flex flex-col">
+                    <div className="flex justify-center items-center">
+                        <p className="border-2 border-primary bg-gray-800 rounded-tl-[20px] rounded-br-[20px] p-3 text-xl text-white w-max">Send Me A Message</p>
+                    </div>
+                    <div className="flex flex-col gap-10 mt-10">
+                        <div className="flex items-center md:px-70 justify-between">
+                            <div className="flex flex-col gap-1">
+                                <p className="text-sm text-primary">Your name *</p>
+                                <input type="text" className="border-none group-focus-within:text-primary border-t-0" />
+                            </div>
+                            <div className="flex flex-col gap-1">
+                                <p className="text-sm text-primary">Your email *</p>
+                                <input type="email" className="border-none group-focus-within:text-primary border-t-0" />
+                            </div>
+                        </div>
+                        <p className="text-sm text-primary">Your message *</p>
+                        <input type="text" />
+                    </div>
+                    <div className="flex items-center justify-center mt-8">
+                        <button className="flex gap-3 bg-gray-800 rounded-2xl px-4 py-3 font-light text-white">Send Message <Send /> </button>
+                    </div>
+                </div>
+            </section>
 
         </GridBackground >
     )
