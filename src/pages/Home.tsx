@@ -1,6 +1,6 @@
 import { User, Cpu, Briefcase, LayoutDashboard, Mail, MapPin, Link, Download, GraduationCap, Zap, Rocket, Layers, Send } from "lucide-react"
 import { GridBackground } from "../components/ui/Background"
-import { Header } from "../components"
+import { Header, Footer } from "../components"
 import { FlipWords } from "../components/ui/flip-words"
 import { SpinningGlobe } from "../components/ui/spinning-globe"
 import { CanvasRevealEffect, Card } from "@/components/ui/canvas-reveal-effect";
@@ -138,7 +138,7 @@ const Home = () => {
             {/* About Section */}
             <section className="px-5 sm:px-45 w-full mt-20 scroll-mt-30" id="about">
                 <div className="w-fit">
-                    <div className="border-2 border-primary bg-gray-800 rounded-tl-[80px] rounded-br-[80px] px-8 py-3 text-2xl font-bold tracking-wider text-white">
+                    <div className="border-2 border-primary bg-gray-800 rounded-tl-[20px] rounded-br-[20px] px-8 py-3 text-2xl font-bold tracking-wider text-white">
                         About Me
                     </div>
                 </div>
@@ -319,7 +319,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <a href="#" className="bg-primary p-2 text-slate-950 text-xl rounded-2xl mt-1">View more</a>
+                    <a href="#" className="bg-primary p-2 text-slate-950 text-lg rounded-2xl mt-1">View more</a>
                 </div>
             </section>
 
@@ -355,11 +355,14 @@ const Home = () => {
                         <input type="text" />
                     </div>
                     <div className="flex items-center justify-center mt-8">
-                        <button className="flex gap-3 bg-gray-800 rounded-2xl px-4 py-3 font-light text-white">Send Message <Send /> </button>
+                        <button className="flex gap-3 bg-gray-800 rounded-2xl px-4 py-3 font-light text-white items-center">Send Message <Send size={18} /> </button>
                     </div>
                 </div>
             </section>
 
+
+            {/* Footer */}
+            <Footer />
         </GridBackground >
     )
 }
