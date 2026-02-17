@@ -9,7 +9,7 @@ const Header = () => {
                     <span className="text-primary">&lt;C/&gt;</span>PhilippeGael
                 </div>
                 <div className="text-md flex gap-6 items-center">
-                    <a href="#" className="text-nav hidden sm:block">Home</a>
+                    <a href="#home" className="text-nav hidden sm:block">Home</a>
                     <a href="#" className="hover:text-nav transition-colors sm:block hidden">Blogs</a>
                     <FaSearch className="sm:hidden block" />
                     <Menu className="sm:hidden block" />

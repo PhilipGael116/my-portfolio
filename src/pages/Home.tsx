@@ -1,17 +1,20 @@
-import { User, Computer, EditIcon, LayoutDashboard, Mail, LocateFixedIcon, ToolCaseIcon, Link, Download } from "lucide-react"
+import { User, Cpu, Briefcase, LayoutDashboard, Mail, MapPin, Link, Download, GraduationCap, Zap, Rocket, Layers } from "lucide-react"
 import { GridBackground } from "../components/ui/Background"
 import { Header } from "../components"
 import { FlipWords } from "../components/ui/flip-words"
 import { SpinningGlobe } from "../components/ui/spinning-globe"
 import { CanvasRevealEffect, Card } from "@/components/ui/canvas-reveal-effect";
 import { CarouselDemo } from "../components/ui/carousel"
+import { InfiniteMovingCardsDemo } from "@/components/ui/testimonials"
+
+import { useState } from "react"
 
 const Home = () => {
-    const titles = ["Developer", "Designer", "Engineer", "Architect"]
+    const titles = ["Developer", "Designer", "Engineer", "Architect"];
 
-    // const getNavigationItem = () => {
-    //     const item = onclick()
-    // }
+    const [activeNav, setActiveNav] = useState("#home");
+
+
 
     return (
         <GridBackground>
@@ -20,14 +23,14 @@ const Home = () => {
                 <div className="px-5 sm:px-24 py-30 min-h-screen">
                     {/* Navigation card */}
                     <div className="nav-card lg:flex flex-col gap-6 text-white bg-gray-800 p-5 rounded-4xl w-fit fixed h-fit hidden z-100">
-                        <a href="#home" className="bg-white text-gray-800 rounded-lg p-1"><LayoutDashboard /></a>
-                        <a href="#about"><User /></a>
-                        <a href="#my-strategy"><Computer /></a>
-                        <a href="#my-works"><EditIcon /></a>
-                        <a href="#contact"><Mail /></a>
+                        <a href="#home" title="Home" onClick={() => setActiveNav("#home")} className={`p-2 ${activeNav === "#home" ? "bg-white text-gray-800 rounded-lg transition-all duration-500" : ""}`}><LayoutDashboard size={20} /></a>
+                        <a href="#about" title="About" onClick={() => setActiveNav("#about")} className={`p-2 ${activeNav === "#about" ? "bg-white text-gray-800 rounded-lg transition-all duration-500" : ""}`}><User size={20} /></a>
+                        <a href="#my-strategy" title="Strategy" onClick={() => setActiveNav("#my-strategy")} className={`p-2 ${activeNav === "#my-strategy" ? "bg-white text-gray-800 rounded-lg transition-all duration-500" : ""}`}><Zap size={20} /></a>
+                        <a href="#my-works" title="Works" onClick={() => setActiveNav("#my-works")} className={`p-2 ${activeNav === "#my-works" ? "bg-white text-gray-800 rounded-lg transition-all duration-500" : ""}`}><Briefcase size={20} /></a>
+                        <a href="#contact" title="Contact" onClick={() => setActiveNav("#contact")} className={`p-2 ${activeNav === "#contact" ? "bg-white text-gray-800 rounded-lg transition-all duration-500" : ""}`}><Mail size={20} /></a>
                     </div>
                     {/* Title flipper */}
-                    <div className="text-center mb-4">
+                    <div className="text-center mb-4 scroll-mt-30" id="home">
                         <h1 className="text-white md:text-8xl font-black text-5xl sm:text-6xl inline-block">
                             <FlipWords words={titles} className="text-primary" />
                         </h1>
@@ -43,37 +46,37 @@ const Home = () => {
                             <div className="flex flex-col gap-2 text-gray-300">
                                 <p className="flex items-center gap-2">
                                     <Mail size={14} className="text-primary" />
-                                    <a href="#"> gaelngando@gmail.com</a>
+                                    <a href="mailto:gaelngando@gmail.com" className="hover:text-primary transition-colors text-xs">gaelngando@gmail.com</a>
                                 </p>
 
                                 <p className="flex items-center gap-2">
-                                    <LocateFixedIcon size={14} className="text-primary" />
-                                    <a href="#">Buea, Cameroon</a>
+                                    <MapPin size={14} className="text-primary" />
+                                    <span className="text-xs">Buea, Cameroon</span>
                                 </p>
 
                                 <p className="flex items-center gap-2">
-                                    <ToolCaseIcon size={14} className="text-primary" />
-                                    <a href="#">gaelngando@gmail.com</a>
+                                    <GraduationCap size={14} className="text-primary" />
+                                    <span className="text-xs">Software Engineering</span>
                                 </p>
 
                                 <p className="flex items-center gap-2">
                                     <Link size={14} className="text-primary" />
-                                    <a href="#">www.philippegael.com</a>
+                                    <a href="https://www.philippegael.com" target="_blank" className="hover:text-primary transition-colors text-xs">www.philippegael.com</a>
                                 </p>
                             </div>
 
                             {/* My Skills */}
                             <div className="flex gap-2 overflow-x-auto flex-nowrap max-w-[200px] md:max-w-[280px] hide-scrollbar">
-                                <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0">HTML</p>
-                                <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0">CSS</p>
-                                <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0">JAVASCRIPT</p>
-                                <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0">REACT</p>
-                                <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0">NODE</p>
-                                <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0">EXPRESS JS</p>
-                                <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0">MONGO DB</p>
+                                <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0 text-xs font-bold">HTML</p>
+                                <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0 text-xs font-bold">CSS</p>
+                                <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0 text-xs font-bold">JS</p>
+                                <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0 text-xs font-bold">REACT</p>
+                                <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0 text-xs font-bold">NODE</p>
+                                <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0 text-xs font-bold">EXPRESS</p>
+                                <p className="text-gray-200 bg-[#0F172A] p-2 rounded-2xl shrink-0 text-xs font-bold">MONGO</p>
                             </div>
 
-                            <a href="/my-cv.pdf" className="border-none bg-white text-gray-800 p-3 flex gap-2 items-center rounded-xl cursor-pointer" download>Downoload CV <Download className="animate-bounce" /> </a>
+                            <a href="/my-cv.pdf" className="border-none bg-white text-gray-800 p-3 flex gap-2 items-center rounded-xl font-bold cursor-pointer hover:bg-gray-200 transition-colors" download>Download CV <Download className="animate-bounce" size={18} /> </a>
                         </div>
 
                         {/* Devloper Part */}
@@ -166,6 +169,7 @@ const Home = () => {
                     <Card
                         title="Planning & Strategy"
                         description="We'll collaborate to map out your website's goals, target audience, and key functionalities."
+                        icon={<Layers size={64} className="text-teal-400" />}
                     >
                         <CanvasRevealEffect
                             animationSpeed={5}
@@ -182,6 +186,7 @@ const Home = () => {
                     <Card
                         title="Development & Build"
                         description="From design to deployment, I'll build your project with clean code and modern technologies."
+                        icon={<Cpu size={64} className="text-purple-400" />}
                     >
                         <CanvasRevealEffect
                             animationSpeed={5}
@@ -198,6 +203,7 @@ const Home = () => {
                     <Card
                         title="Launch & Scale"
                         description="Ensuring smooth deployment and providing ongoing support as your project grows."
+                        icon={<Rocket size={64} className="text-blue-400" />}
                     >
                         <CanvasRevealEffect
                             animationSpeed={5}
@@ -229,7 +235,22 @@ const Home = () => {
                 <CarouselDemo />
             </div>
 
-        </GridBackground>
+            {/* Testimonials section */}
+            <div className="py-15 px-5 sm:px-20 md:px-50 w-full mt-20 scroll-mt-15" id="testimonials">
+                <div className="relative z-10 flex flex-col items-center mb-10">
+                    <div className="w-fit">
+                        <p className="relative text-primary text-4xl font-bold border-b pb-2 border-primary 
+                before:content-[''] before:absolute before:bottom-[-4px] before:left-[-4px] before:w-2 before:h-2 before:bg-primary before:rounded-full
+                after:content-[''] after:absolute after:bottom-[-4px] after:right-[-4px] after:w-2 after:h-2 after:bg-primary after:rounded-full">
+                            Testimonials
+                        </p>
+                    </div>
+                </div>
+
+                <InfiniteMovingCardsDemo />
+            </div>
+
+        </GridBackground >
     )
 }
 

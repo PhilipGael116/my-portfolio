@@ -239,17 +239,19 @@ export const Card = ({
     title,
     children,
     description,
+    icon,
 }: {
     title: string;
     children?: React.ReactNode;
     description?: string;
+    icon?: React.ReactNode;
 }) => {
     const [hovered, setHovered] = React.useState(false);
     return (
         <div
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className="border group/canvas-card flex flex-col border-white/20 max-w-sm w-full mx-auto p-6 relative h-full overflow-hidden rounded-3xl"
+            className="border group/canvas-card flex flex-col border-white/20 max-w-sm w-full mx-auto p-6 relative h-full min-h-[30rem] overflow-hidden rounded-3xl"
         >
             <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white" />
             <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white" />
@@ -268,15 +270,16 @@ export const Card = ({
                 )}
             </AnimatePresence>
 
-            {/* "Hover Me" text - visible when NOT hovered */}
-            <div className={`absolute inset-0 flex items-center justify-center z-10 transition-opacity duration-300 ${hovered ? 'opacity-0' : 'opacity-100'}`}>
-                {/* Visible ONLY on touch devices (even if the window is large) */}
-                <span className="hidden pointer-coarse:inline text-white/60 text-2xl font-semibold">
-                    Click Me
+            {/* Icon and "Hover Me" text - visible when NOT hovered */}
+            <div className={`absolute inset-0 flex flex-col items-center justify-center z-10 transition-all duration-300 ${hovered ? 'opacity-0 scale-90' : 'opacity-100 scale-100'}`}>
+                {icon && <div className="mb-4 text-white/80 group-hover/canvas-card:text-white transition-colors duration-300">{icon}</div>}
+                {/* Visible ONLY on touch devices */}
+                <span className="hidden pointer-coarse:inline text-white/40 text-sm font-medium tracking-widest uppercase">
+                    Tap to see
                 </span>
-                {/* Visible ONLY on devices with a mouse (even if the window is tiny) */}
-                <span className="hidden pointer-fine:inline text-white/60 text-2xl font-semibold">
-                    Hover Me
+                {/* Visible ONLY on devices with a mouse */}
+                <span className="hidden pointer-fine:inline text-white/40 text-sm font-medium tracking-widest uppercase">
+                    Hover to reveal
                 </span>
             </div>
 

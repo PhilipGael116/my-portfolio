@@ -59,7 +59,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
                     current === index ? "opacity-100 visible" : "opacity-0 invisible"
                 )}
             >
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold  relative text-black sm:mb-40 mb-25">
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold  relative text-black sm:mb-40 mb-30">
                     {title}
                 </h2>
                 <div className="flex justify-center mt-4">
@@ -168,12 +168,12 @@ export function CarouselDemo() {
         {
             title: "Neon Nights",
             button: "View Live Site",
-            src: "https://images.unsplash.com/photo-1590041794748-2d8eb73a571c?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            src: "",
         },
         {
             title: "Desert Whispers",
             button: "View Live Site",
-            src: "https://images.unsplash.com/photo-1679420437432-80cfbf88986c?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            src: "",
         },
     ];
     return (
