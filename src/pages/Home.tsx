@@ -18,13 +18,25 @@ const Home = () => {
         const sections = document.querySelectorAll("section");
 
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    setActiveNav(`#${entry.target.id}`);
-                }
-            });
+            // Find all intersecting entries
+            const visibleEntries = entries.filter(entry => entry.isIntersecting);
+
+            if (visibleEntries.length > 0) {
+                // If multiple sections are visible (during fast scroll), 
+                // pick the one that is MOST visible (highest intersection ratio)
+                const mostVisible = visibleEntries.reduce((prev, curr) =>
+                    curr.intersectionRatio > prev.intersectionRatio ? curr : prev
+                );
+
+                setActiveNav(`#${mostVisible.target.id}`);
+            }
         },
-            { threshold: 0.6 }
+            {
+                // Using multiple thresholds allows the 'mostVisible' logic to be more granular
+                threshold: [0.1, 0.3, 0.5, 0.7, 0.9],
+                // Root margin narrowed to detect sections closer to the top-middle
+                rootMargin: "-20% 0px -60% 0px"
+            }
         );
 
         sections.forEach((section) => {
@@ -42,12 +54,28 @@ const Home = () => {
                 <Header />
                 <div className="px-5 sm:px-24 py-30 min-h-screen">
                     {/* Navigation card */}
-                    <div className="nav-card lg:flex flex-col gap-6 text-white bg-gray-800/70 p-5 rounded-4xl w-fit fixed h-fit hidden z-100">
-                        <a href="#home" title="Home" onClick={() => setActiveNav("#home")} className={`rounded-lg transition-all duration-300 p-2 ${activeNav === "#home" ? "bg-white text-gray-800" : ""}`}><LayoutDashboard size={20} /></a>
-                        <a href="#about" title="About" onClick={() => setActiveNav("#about")} className={`rounded-lg transition-all duration-300 p-2 ${activeNav === "#about" ? "bg-white text-gray-800" : ""}`}><User size={20} /></a>
-                        <a href="#my-strategy" title="Strategy" onClick={() => setActiveNav("#my-strategy")} className={`rounded-lg transition-all duration-300 p-2 ${activeNav === "#my-strategy" ? "bg-white text-gray-800" : ""}`}><Zap size={20} /></a>
-                        <a href="#my-works" title="Works" onClick={() => setActiveNav("#my-works")} className={`rounded-lg transition-all duration-300 p-2 ${activeNav === "#my-works" ? "bg-white text-gray-800" : ""}`}><Briefcase size={20} /></a>
-                        <a href="#contact" title="Contact" onClick={() => setActiveNav("#contact")} className={`rounded-lg transition-all duration-300 p-2 ${activeNav === "#contact" ? "bg-white text-gray-800" : ""}`}><Mail size={20} /></a>
+                    <div className="nav-card lg:flex flex-col gap-4 text-white bg-gray-900/60 backdrop-blur-md p-3 rounded-full w-fit fixed top-40 left-6 hidden z-100 border border-white/10 shadow-2xl">
+                        {[
+                            { id: "#home", icon: <LayoutDashboard size={20} />, title: "Home" },
+                            { id: "#about", icon: <User size={20} />, title: "About" },
+                            { id: "#my-strategy", icon: <Zap size={20} />, title: "Strategy" },
+                            { id: "#my-works", icon: <Briefcase size={20} />, title: "Works" },
+                            { id: "#contact", icon: <Mail size={20} />, title: "Contact" },
+                        ].map((item) => (
+                            <a
+                                key={item.id}
+                                href={item.id}
+                                title={item.title}
+                                onClick={() => setActiveNav(item.id)}
+                                className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 
+                                    ${activeNav === item.id
+                                        ? "bg-white text-gray-900 scale-110"
+                                        : ""
+                                    }`}
+                            >
+                                {item.icon}
+                            </a>
+                        ))}
                     </div>
                     {/* Title flipper */}
                     <section className="text-center mb-4 scroll-mt-30" id="home">
@@ -329,7 +357,7 @@ const Home = () => {
             </section>
 
             {/* Contact section */}
-            <section className="py-15 px-5 sm:px-20 md:px-50 w-full mt-20 scroll-mt-15" id="testimonials">
+            <section className="py-15 px-5 sm:px-20 md:px-50 w-full mt-20 scroll-mt-15" id="contact">
                 <div className="relative z-10 flex flex-col items-center mb-6">
                     <div className="w-fit">
                         <p className="relative text-primary text-4xl font-bold border-b pb-2 border-primary 
@@ -341,27 +369,43 @@ const Home = () => {
                     <p className="text-gray-300 mt-4">I'm currenlt available for freelance work</p>
                 </div>
 
-                <div className="flex flex-col">
+                <div className="flex flex-col max-w-4xl mx-auto w-full">
                     <div className="flex justify-center items-center">
-                        <p className="border-2 border-primary bg-gray-800/70 rounded-tl-[20px] rounded-br-[20px] p-3 text-xl text-white w-max">Send Me A Message</p>
+                        <p className="border-2 border-primary bg-gray-800/70 rounded-tl-[20px] rounded-br-[20px] p-3 text-xl text-white w-max mb-10">Send Me A Message</p>
                     </div>
-                    <div className="flex flex-col gap-10 mt-10">
-                        <div className="flex items-center md:px-70 justify-between">
-                            <div className="flex flex-col gap-1">
-                                <p className="text-sm text-primary">Your name *</p>
-                                <input type="text" className="border-none group-focus-within:text-primary border-t-0" />
+                    <form className="flex flex-col gap-10">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                            <div className="flex flex-col gap-2">
+                                <label className="text-sm text-primary font-medium">Your name *</label>
+                                <input
+                                    type="text"
+                                    className="bg-transparent border-0 border-b-2 border-primary py-2 text-white focus:border-white transition-colors outline-none"
+                                    placeholder="Philippe Gael"
+                                />
                             </div>
-                            <div className="flex flex-col gap-1">
-                                <p className="text-sm text-primary">Your email *</p>
-                                <input type="email" className="border-none group-focus-within:text-primary border-t-0" />
+                            <div className="flex flex-col gap-2">
+                                <label className="text-sm text-primary font-medium">Your email *</label>
+                                <input
+                                    type="email"
+                                    className="bg-transparent border-0 border-b-2 border-primary py-2 text-white focus:border-white transition-colors outline-none"
+                                    placeholder="john@example.com"
+                                />
                             </div>
                         </div>
-                        <p className="text-sm text-primary">Your message *</p>
-                        <input type="text" />
-                    </div>
-                    <div className="flex items-center justify-center mt-8">
-                        <button className="flex gap-3 bg-gray-800/70 rounded-2xl px-4 py-3 font-light text-white items-center">Send Message <Send size={18} /> </button>
-                    </div>
+                        <div className="flex flex-col gap-2">
+                            <label className="text-sm text-primary font-medium">Your message *</label>
+                            <textarea
+                                rows={1}
+                                className="bg-transparent border-0 border-b-2 border-primary py-2 text-white focus:border-white transition-colors outline-none resize-none"
+                                placeholder="Tell me about your project..."
+                            />
+                        </div>
+                        <div className="flex items-center justify-center mt-4">
+                            <button type="submit" className="flex gap-3 bg-primary border border-primary/50 text-gray-900 rounded-2xl px-8 py-3 font-bold items-center transition-all duration-300">
+                                Send Message <Send size={18} />
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </section>
 
