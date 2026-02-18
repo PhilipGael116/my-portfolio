@@ -42,7 +42,7 @@ const Home = () => {
                 <Header />
                 <div className="px-5 sm:px-24 py-30 min-h-screen">
                     {/* Navigation card */}
-                    <div className="nav-card lg:flex flex-col gap-6 text-white bg-gray-800 p-5 rounded-4xl w-fit fixed h-fit hidden z-100">
+                    <div className="nav-card lg:flex flex-col gap-6 text-white bg-gray-800/70 p-5 rounded-4xl w-fit fixed h-fit hidden z-100">
                         <a href="#home" title="Home" onClick={() => setActiveNav("#home")} className={`rounded-lg transition-all duration-300 p-2 ${activeNav === "#home" ? "bg-white text-gray-800" : ""}`}><LayoutDashboard size={20} /></a>
                         <a href="#about" title="About" onClick={() => setActiveNav("#about")} className={`rounded-lg transition-all duration-300 p-2 ${activeNav === "#about" ? "bg-white text-gray-800" : ""}`}><User size={20} /></a>
                         <a href="#my-strategy" title="Strategy" onClick={() => setActiveNav("#my-strategy")} className={`rounded-lg transition-all duration-300 p-2 ${activeNav === "#my-strategy" ? "bg-white text-gray-800" : ""}`}><Zap size={20} /></a>
@@ -58,7 +58,7 @@ const Home = () => {
                     {/* Hero section */}
                     <div className="grid md:grid-cols-2 grid-cols-1 items-start gap-6 xl:gap-10">
                         {/* Profile Card */}
-                        <div className="profile-card border-2 border-l-primary border-t-primary border-gray-200 bg-gray-800 rounded-tl-[80px] rounded-br-[80px] flex flex-col gap-3 items-center p-4 w-[300px] mx-auto">
+                        <div className="profile-card border-2 border-l-primary border-t-primary border-gray-200 bg-gray-800/70 rounded-tl-[80px] rounded-br-[80px] flex flex-col gap-3 items-center p-4 w-[300px] mx-auto">
                             <img src="./hero-image.jpg" alt="my picture" className="border-3 border-primary rounded-full w-[100px] h-[100px] object-cover" loading="lazy" />
                             <h3 className="text-gray-100 text-lg font-bold">Philippe</h3>
                             <p className="text-gray-300 text-sm">Full-stack Developer</p>
@@ -138,7 +138,7 @@ const Home = () => {
             {/* About Section */}
             <section className="px-5 sm:px-45 w-full mt-20 scroll-mt-30" id="about">
                 <div className="w-fit">
-                    <div className="border-2 border-primary bg-gray-800 rounded-tl-[20px] rounded-br-[20px] px-8 py-3 text-2xl font-bold tracking-wider text-white">
+                    <div className="border-2 border-primary bg-gray-800/70 rounded-tl-[20px] rounded-br-[20px] px-8 py-3 text-2xl font-bold tracking-wider text-white sm:ml-6">
                         About Me
                     </div>
                 </div>
@@ -146,8 +146,8 @@ const Home = () => {
 
             <div className="about-cards relative z-30 py-15 px-5 sm:px-50 w-full grid grid-cols-1 lg:grid-cols-2 gap-10 ">
                 <div className="flex flex-col gap-10 h-full w-full sm:min-w-[340px]">
-                    <div className="flex-1 flex flex-col gap-6 text-gray-300">
-                        <div className="bg-gray-800 sm:p-8 p-3 rounded-3xl border border-white/5 h-full">
+                    <div className="flex-1 flex flex-col gap-6 text-white">
+                        <div className="bg-gray-800/70 sm:p-8 p-3 rounded-3xl border border-white/5 h-full">
                             <p className="text-primary/80 text-xs mb-2">&lt;p&gt;</p>
                             <div className="flex flex-col gap-4 text-lg leading-relaxed ml-4">
                                 <p className="text-sm">
@@ -249,7 +249,7 @@ const Home = () => {
                             Works
                         </p>
                     </div>
-                    <p className="text-gray-300 mt-4">I had the pleasure of working on these awesome projects</p>
+                    <p className="text-white mt-4">I had the pleasure of working on these awesome projects</p>
                 </div>
 
                 <CarouselDemo />
@@ -280,46 +280,51 @@ const Home = () => {
                             Blogs
                         </p>
                     </div>
-                    <p className="text-gray-300 mt-4">I had the pleasure of working on these awesome projects</p>
+                    <p className="text-white mt-4">I had the pleasure of working on these awesome projects</p>
                 </div>
 
-                <div className="flex items-center flex-col gap-6">
+                <div className="flex items-center flex-col gap-8">
                     {/* First Blog */}
 
-                    <div className="flex gap-5">
-                        <img src="/hero-image.jpg" alt="" className="max-w-[250px] max-h-[200px] rounded-2xl" />
-                        <div className="flex flex-col gap-5">
-                            <a href="#" className="text-primary sm:text-3xl text-xl leading-[0.9]">What does it take to onlinee a web developer?</a>
-                            <a href="#" className="text-gray-300">Web developement, also know as website developement, encompasses a variety of tasks and processes involved in creating website for the internet...</a>
-                            <p className="text-primary cursor-pointer hover:text-primary/50">Read More&gt;&gt;</p>
+                    <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-x-8 gap-y-4 items-stretch w-full">
+                        <img src="/hero-image.jpg" alt="" className="w-full h-48 md:h-64 object-cover rounded-2xl" />
+                        <div className="flex flex-col justify-between py-1">
+                            <div className="flex flex-col gap-3">
+                                <a href="#" className="text-primary sm:text-3xl text-xl leading-tight font-bold hover:underline">What does it take to become a web developer?</a>
+                                <p className="text-gray-300 line-clamp-3">Web development, also known as website development, encompasses a variety of tasks and processes involved in creating a website for the internet...</p>
+                                <p className="text-primary cursor-pointer hover:text-primary/50 font-medium">Read More &gt;&gt;</p>
+                            </div>
 
-                            <div className="flex items-center gap-3 mt-3">
-                                <p className="bg-white/15 rounded-2xl p-2 text-gray-300">Web Developer</p>
-                                <p className="text-gray-300"><span className="font-bold">Text</span> Philippe</p>
-                                <p className="text-gray-300 font-extralight"><span className="font-bold">Date</span> 10.Oct 2023</p>
-                                <p className="text-gray-300 font-extralight"><span className="font-bold">Read</span> 1 Min</p>
+                            <div className="flex items-center gap-3 mt-4 flex-wrap">
+                                <p className="bg-white/10 rounded-xl px-3 py-1 text-gray-300 text-xs">Web Developer</p>
+                                <p className="text-gray-300 text-xs"><span className="font-bold text-primary">Text:</span> Philippe</p>
+                                <p className="text-gray-300 text-xs font-extralight"><span className="font-bold text-primary">Date:</span> 10.Oct 2023</p>
+                                <p className="text-gray-300 text-xs font-extralight"><span className="font-bold text-primary">Read:</span> 1 Min</p>
                             </div>
                         </div>
                     </div>
+
                     {/* Second Blog */}
 
-                    <div className="flex gap-5">
-                        <img src="/hero-image.jpg" alt="" className="max-w-[250px] max-h-[200px] rounded-2xl" />
-                        <div className="flex flex-col gap-5">
-                            <a href="#" className="text-primary sm:text-3xl text-xl leading-[0.9]">What does it take to become a web developer?</a>
-                            <p className="text-gray-300">Web developement, also know as website developement, encompasses a variety of tasks and processes involved in creating website for the internet...</p>
-                            <p className="text-primary cursor-pointer hover:text-primary/50">Read More&gt;&gt;</p>
+                    <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-x-8 gap-y-4 items-stretch w-full">
+                        <img src="/hero-image.jpg" alt="" className="w-full h-48 md:h-64 object-cover rounded-2xl" />
+                        <div className="flex flex-col justify-between py-1">
+                            <div className="flex flex-col gap-3">
+                                <a href="#" className="text-primary sm:text-3xl text-xl leading-tight font-bold hover:underline">The future of Web AI and Agentic Workflow</a>
+                                <p className="text-gray-300 line-clamp-3">Artificial Intelligence is reshaping how we build and interact with the web. From autopilots to autonomous coding agents...</p>
+                                <p className="text-primary cursor-pointer hover:text-primary/50 font-medium">Read More &gt;&gt;</p>
+                            </div>
 
-                            <div className="flex items-center gap-3 mt-3">
-                                <p className="bg-white/15 rounded-2xl p-2 text-gray-300">Web Developer</p>
-                                <p className="text-gray-300"><span className="font-bold">Text</span> Philippe</p>
-                                <p className="text-gray-300 font-extralight"><span className="font-bold">Date</span> 10.Oct 2023</p>
-                                <p className="text-gray-300 font-extralight"><span className="font-bold">Read</span> 1 Min</p>
+                            <div className="flex items-center gap-3 mt-4 flex-wrap">
+                                <p className="bg-white/10 rounded-xl px-3 py-1 text-gray-300 text-xs">AI & Tech</p>
+                                <p className="text-gray-300 text-xs"><span className="font-bold text-primary">Text:</span> Philippe</p>
+                                <p className="text-gray-300 text-xs font-extralight"><span className="font-bold text-primary">Date:</span> 15.Feb 2026</p>
+                                <p className="text-gray-300 text-xs font-extralight"><span className="font-bold text-primary">Read:</span> 3 Min</p>
                             </div>
                         </div>
                     </div>
 
-                    <a href="#" className="bg-primary p-2 text-slate-950 text-lg rounded-2xl mt-1">View more</a>
+                    <a href="#" className="bg-primary px-8 py-2.5 text-slate-950 font-bold rounded-full mt-4 hover:bg-primary/80 transition-all hover:scale-105 shadow-lg shadow-primary/20">View more</a>
                 </div>
             </section>
 
@@ -338,7 +343,7 @@ const Home = () => {
 
                 <div className="flex flex-col">
                     <div className="flex justify-center items-center">
-                        <p className="border-2 border-primary bg-gray-800 rounded-tl-[20px] rounded-br-[20px] p-3 text-xl text-white w-max">Send Me A Message</p>
+                        <p className="border-2 border-primary bg-gray-800/70 rounded-tl-[20px] rounded-br-[20px] p-3 text-xl text-white w-max">Send Me A Message</p>
                     </div>
                     <div className="flex flex-col gap-10 mt-10">
                         <div className="flex items-center md:px-70 justify-between">
@@ -355,7 +360,7 @@ const Home = () => {
                         <input type="text" />
                     </div>
                     <div className="flex items-center justify-center mt-8">
-                        <button className="flex gap-3 bg-gray-800 rounded-2xl px-4 py-3 font-light text-white items-center">Send Message <Send size={18} /> </button>
+                        <button className="flex gap-3 bg-gray-800/70 rounded-2xl px-4 py-3 font-light text-white items-center">Send Message <Send size={18} /> </button>
                     </div>
                 </div>
             </section>

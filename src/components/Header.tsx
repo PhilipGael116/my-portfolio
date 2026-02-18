@@ -1,7 +1,11 @@
 import { FaGithub, FaDiscord, FaInstagram, FaSearch } from "react-icons/fa"
 import { Menu } from "lucide-react"
+import { useState } from "react"
 
 const Header = () => {
+
+    const [isActive, setIsActive] = useState("home");
+
     return (
         <div className="w-full">
             <header className="text-white sm:px-20 px-5 py-7 flex items-center justify-between w-full fixed top-0 left-0 z-100 bg-[#0F172A]/70 backdrop-blur-md border-b border-white/5">
@@ -9,8 +13,8 @@ const Header = () => {
                     <span className="text-primary">&lt;C/&gt;</span>PhilippeGael
                 </div>
                 <div className="text-md flex gap-6 items-center">
-                    <a href="#home" className="text-nav hidden sm:block">Home</a>
-                    <a href="#" className="hover:text-nav transition-colors sm:block hidden">Blogs</a>
+                    <a href="#home" onClick={() => isActive !== "home" ? setIsActive("home") : null} className={`hidden sm:block ${isActive === "home" ? "text-primary/90" : "text-white"}`}>Home</a>
+                    <a href="#" onClick={() => isActive !== "blogs" ? setIsActive("blogs") : null} className={`hidden sm:block ${isActive === "blogs" ? "text-primary/90" : "text-white"}`}>Blogs</a>
                     <FaSearch className="sm:hidden block" />
                     <Menu className="sm:hidden block" />
                     <div className="relative hidden md:block group">

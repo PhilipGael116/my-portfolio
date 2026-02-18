@@ -2,8 +2,11 @@
 @import "tw-animate-css";
 /* @import "shadcn/tailwind.css"; */
 
+/* Original color: #3B82F6 */
+/* #1E6BFF */
+
 @theme {
-    --color-primary: #3B82F6;
+    --color-primary: #1EF2D6;
     --color-nav: #41b4fb;
     --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
 }
