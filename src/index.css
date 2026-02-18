@@ -70,6 +70,12 @@ body {
     }
 }
 
+@media (max-width: 300px) {
+    .i-build {
+        font-size: 0.8rem;
+    }
+}
+
 @media (max-width: 1124px) {
     .nav-card {
         display: none;
