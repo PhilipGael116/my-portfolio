@@ -14,7 +14,7 @@ const Header = () => {
                 </div>
                 <div className="text-md flex gap-6 items-center">
                     <a href="#home" onClick={() => isActive !== "home" ? setIsActive("home") : null} className={`hidden sm:block ${isActive === "home" ? "text-primary/90" : "text-white"}`}>Home</a>
-                    <a href="#" onClick={() => isActive !== "blogs" ? setIsActive("blogs") : null} className={`hidden sm:block ${isActive === "blogs" ? "text-primary/90" : "text-white"}`}>Blogs</a>
+                    <a href="/blogs" onClick={() => isActive !== "blogs" ? setIsActive("blogs") : null} className={`hidden sm:block ${isActive === "blogs" ? "text-primary/90" : "text-white"}`}>Blogs</a>
                     <FaSearch className="sm:hidden block" />
                     <Menu className="sm:hidden block" />
                     <div className="relative hidden md:block group">
