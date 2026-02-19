@@ -27,7 +27,7 @@ const Header = () => {
                     </div>
                     <a href="#" className="sm:flex gap-2 items-center hidden"><FaInstagram className="text-primary" /> <span className="hidden md:block">Instagram</span></a>
                     <a href="#" className="sm:flex gap-2 items-center hidden"><FaDiscord className="text-primary" /> <span className="hidden md:block">Discord</span></a>
-                    <a href="#" className="sm:flex gap-2 items-center hidden"><FaGithub className="text-primary" /> <span className="hidden md:block">Github</span></a>
+                    <a href="https://github.com/PhilipGael116" target="_blank" className="sm:flex gap-2 items-center hidden"><FaGithub className="text-primary" /> <span className="hidden md:block">Github</span></a>
                 </div>
             </header>
         </div>
