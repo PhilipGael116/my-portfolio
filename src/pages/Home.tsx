@@ -4,7 +4,7 @@ import { Header, Footer } from "../components"
 import { FlipWords } from "../components/ui/flip-words"
 import { SpinningGlobe } from "../components/ui/spinning-globe"
 import { CanvasRevealEffect, Card } from "@/components/ui/canvas-reveal-effect";
-import { CarouselDemo } from "../components/ui/carousel"
+// import { CarouselDemo } from "../components/ui/carousel"
 import { InfiniteMovingCardsDemo } from "@/components/ui/testimonials"
 
 import { useState, useEffect } from "react"
@@ -280,7 +280,7 @@ const Home = () => {
                     <p className="text-white mt-4">I had the pleasure of working on these awesome projects</p>
                 </div>
 
-                <CarouselDemo />
+                {/* <CarouselDemo /> */}
             </section>
 
             {/* Testimonials section */}
