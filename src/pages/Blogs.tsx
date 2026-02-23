@@ -29,12 +29,12 @@ const Blogs = () => {
                     {/* Secondary Cards Column */}
                     <div className="flex flex-col gap-6">
                         <div className="relative flex-1 group cursor-pointer bg-cover bg-center bg-no-repeat bg-[url('/hero-image.jpg')] min-h-[210px] rounded-2xl overflow-hidden shadow-xl border-x border-t border-white/10">
-                            <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-4">
+                            <div className="absolute inset-0 bg-linear-to-t via-black/40 to-transparent flex flex-col justify-end p-6 transition-all duration-300 from-black">
                                 <p className="text-white font-semibold line-clamp-2">Mastering Framer Motion for Smooth Animations</p>
                             </div>
                         </div>
                         <div className="relative flex-1 group cursor-pointer bg-cover bg-center bg-no-repeat bg-[url('/hero-image.jpg')] min-h-[210px] rounded-2xl overflow-hidden shadow-xl border border-white/10">
-                            <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-4">
+                            <div className="absolute inset-0 bg-linear-to-t via-black/40 to-transparent flex flex-col justify-end p-6 transition-all duration-300 from-black">
                                 <p className="text-white font-semibold line-clamp-2">Why Zustand is my Favorite State Manager</p>
                             </div>
                         </div>

@@ -1,14 +1,31 @@
 import { FaGithub, FaDiscord, FaInstagram, FaSearch } from "react-icons/fa"
 import { Menu } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 
 const Header = () => {
 
     const [isActive, setIsActive] = useState("home");
+    const [showHeader, setShowHeader] = useState(true);
+    const lastScrollY = useRef(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > lastScrollY.current && window.scrollY > 80) {
+                setShowHeader(false);
+            } else {
+                setShowHeader(true);
+            }
+            lastScrollY.current = window.scrollY;
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
 
     return (
         <div className="w-full">
-            <header className="text-white sm:px-20 px-5 py-7 flex items-center justify-between w-full fixed top-0 left-0 z-100 bg-[#0F172A]/70 backdrop-blur-md border-b border-white/5">
+            <header className={`${showHeader ? "translate-y-0" : "-translate-y-full"} transition-transform duration-300 text-white sm:px-20 px-5 py-7 flex items-center justify-between w-full fixed top-0 left-0 z-100 bg-[#0F172A]/70 backdrop-blur-md border-b border-white/5`}>
                 <div className="text-lg font-bold tracking-tight">
                     <span className="text-primary">&lt;C/&gt;</span>PhilippeGael
                 </div>
