@@ -366,7 +366,7 @@ const Home = () => {
                             Contact
                         </p>
                     </div>
-                    <p className="text-gray-300 mt-4">I'm currenlt available for freelance work</p>
+                    <p className="text-gray-300 mt-4">I'm currently available for freelance work & projects collaborations</p>
                 </div>
 
                 <div className="flex flex-col max-w-4xl mx-auto w-full">
