@@ -87,7 +87,7 @@ const Home = () => {
                     <div className="grid md:grid-cols-2 grid-cols-1 items-start gap-6 xl:gap-10">
                         {/* Profile Card */}
                         <div className="profile-card border-2 border-l-primary border-t-primary border-gray-200 bg-gray-800/70 rounded-tl-[80px] rounded-br-[80px] flex flex-col gap-3 items-center p-4 w-[300px] mx-auto">
-                            <img src="./hero-image.png" alt="my picture" className="border-3 border-primary rounded-full w-[100px] h-[100px] object-cover" loading="lazy" />
+                            <img src="./hero-image.webp" alt="my picture" className="border-3 border-primary rounded-full w-[100px] h-[100px] object-cover" loading="lazy" />
                             <h3 className="text-gray-100 text-lg font-bold">Philippe</h3>
                             <p className="text-gray-300 text-sm">Full-stack Developer</p>
 
@@ -315,7 +315,7 @@ const Home = () => {
                     {/* First Blog */}
 
                     <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-x-8 gap-y-4 items-stretch w-full">
-                        <img src="/hero-image.png" alt="" className="w-full h-48 md:h-64 object-cover rounded-2xl" />
+                        <img src="/hero-image.webp" alt="" className="w-full h-48 md:h-64 object-cover rounded-2xl" />
                         <div className="flex flex-col justify-between py-1">
                             <div className="flex flex-col gap-3">
                                 <a href="#" className="text-primary sm:text-3xl text-xl leading-tight font-bold hover:underline">What does it take to become a web developer?</a>
@@ -335,7 +335,7 @@ const Home = () => {
                     {/* Second Blog */}
 
                     <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-x-8 gap-y-4 items-stretch w-full">
-                        <img src="/hero-image.png" alt="" className="w-full h-48 md:h-64 object-cover rounded-2xl" />
+                        <img src="/hero-image.webp" alt="" className="w-full h-48 md:h-64 object-cover rounded-2xl" />
                         <div className="flex flex-col justify-between py-1">
                             <div className="flex flex-col gap-3">
                                 <a href="#" className="text-primary sm:text-3xl text-xl leading-tight font-bold hover:underline">The future of Web AI and Agentic Workflow</a>
