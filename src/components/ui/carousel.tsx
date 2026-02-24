@@ -158,12 +158,12 @@ export function CarouselDemo() {
         {
             title: "Todo List",
             button: "View Live Site",
-            src: "/my-works-1.png",
+            src: "/my-works-1.webp",
         },
         {
             title: "Urban Dreams",
             button: "View Live Site",
-            src: "/my-works-2.png",
+            src: "/my-works-2.webp",
         },
         {
             title: "Neon Nights",
