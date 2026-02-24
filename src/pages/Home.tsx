@@ -352,7 +352,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <a href="#" className="bg-primary px-8 py-2.5 text-slate-950 font-bold rounded-full mt-4 hover:bg-primary/80 transition-all hover:scale-105 shadow-lg shadow-primary/20">View more</a>
+                    <a href="/blogs" className="bg-primary px-8 py-2.5 text-slate-950 font-bold rounded-full mt-4 hover:bg-primary/80 transition-all hover:scale-105 shadow-lg shadow-primary/20">View more</a>
                 </div>
             </section>
 
