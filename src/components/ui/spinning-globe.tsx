@@ -5,25 +5,25 @@ const sampleMarkers: GlobeMarker[] = [
     {
         lat: 40.7128,
         lng: -74.006,
-        src: "https://assets.aceternity.com/avatars/1.webp",
+        src: "https://assets.aceternity.com/avatars/1.jpg",
         label: "New York",
     },
     {
         lat: 51.5074,
         lng: -0.1278,
-        src: "https://assets.aceternity.com/avatars/2.webp",
+        src: "https://assets.aceternity.com/avatars/2.jpg",
         label: "London",
     },
     {
         lat: 35.6762,
         lng: 139.6503,
-        src: "https://assets.aceternity.com/avatars/3.webp",
+        src: "https://assets.aceternity.com/avatars/3.jpg",
         label: "Tokyo",
     },
     {
         lat: -33.8688,
         lng: 151.2093,
-        src: "https://assets.aceternity.com/avatars/4.webp",
+        src: "https://assets.aceternity.com/avatars/4.jpg",
         label: "Sydney",
     },
 ];
