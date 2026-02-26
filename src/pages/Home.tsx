@@ -46,6 +46,22 @@ const Home = () => {
         return () => observer.disconnect();
     }, [])
 
+    const blogs = [
+        {
+            id: 1,
+            src: "/hero-image.webp",
+            title: "The future of Web AI and Agentic Workflow",
+            content: "Artificial Intelligence is reshaping how we build and interact with the web. From autopilots to autonomous coding agents..."
+        },
+
+        {
+            id: 1,
+            src: "/hero-image.webp",
+            title: "What does it take to become a web developer?",
+            content: "Web development, also known as website development, encompasses a variety of tasks and processes involved in creating a website for the internet..."
+        },
+    ]
+
 
 
     return (
@@ -314,43 +330,27 @@ const Home = () => {
                 <div className="flex items-center flex-col gap-8">
                     {/* First Blog */}
 
-                    <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-x-8 gap-y-4 items-stretch w-full">
-                        <img src="/hero-image.webp" alt="" className="w-full h-48 md:h-64 object-cover rounded-2xl" />
-                        <div className="flex flex-col justify-between py-1">
-                            <div className="flex flex-col gap-3">
-                                <a href="#" className="text-primary sm:text-3xl text-xl leading-tight font-bold hover:underline">What does it take to become a web developer?</a>
-                                <p className="text-gray-300 line-clamp-3">Web development, also known as website development, encompasses a variety of tasks and processes involved in creating a website for the internet...</p>
-                                <p className="text-primary cursor-pointer hover:text-primary/50 font-medium">Read More &gt;&gt;</p>
-                            </div>
+                    {
+                        blogs.map(({ id, title, src, content }) => (
+                            <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-x-8 gap-y-4 items-stretch w-full" key={id}>
+                                <img src={`${src}`} alt="" className="w-full h-48 md:h-64 object-cover rounded-2xl" />
+                                <div className="flex flex-col justify-between py-1">
+                                    <div className="flex flex-col gap-3">
+                                        <a href="#" className="text-primary sm:text-3xl text-xl leading-tight font-bold hover:underline">{title}</a>
+                                        <p className="text-gray-300 line-clamp-3">{content}</p>
+                                        <p className="text-primary cursor-pointer hover:text-primary/50 font-medium">Read More &gt;&gt;</p>
+                                    </div>
 
-                            <div className="flex items-center gap-3 mt-4 flex-wrap">
-                                <p className="bg-white/10 rounded-xl px-3 py-1 text-gray-300 text-xs">Web Developer</p>
-                                <p className="text-gray-300 text-xs"><span className="font-bold text-primary">Text:</span> Philippe</p>
-                                <p className="text-gray-300 text-xs font-extralight"><span className="font-bold text-primary">Date:</span> 10.Oct 2023</p>
-                                <p className="text-gray-300 text-xs font-extralight"><span className="font-bold text-primary">Read:</span> 1 Min</p>
+                                    <div className="flex items-center gap-3 mt-4 flex-wrap">
+                                        <p className="bg-white/10 rounded-xl px-3 py-1 text-gray-300 text-xs">Web Developer</p>
+                                        <p className="text-gray-300 text-xs"><span className="font-bold text-primary">Text:</span> Philippe</p>
+                                        <p className="text-gray-300 text-xs font-extralight"><span className="font-bold text-primary">Date:</span> 10.Oct 2023</p>
+                                        <p className="text-gray-300 text-xs font-extralight"><span className="font-bold text-primary">Read:</span> 1 Min</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-
-                    {/* Second Blog */}
-
-                    <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-x-8 gap-y-4 items-stretch w-full">
-                        <img src="/hero-image.webp" alt="" className="w-full h-48 md:h-64 object-cover rounded-2xl" />
-                        <div className="flex flex-col justify-between py-1">
-                            <div className="flex flex-col gap-3">
-                                <a href="#" className="text-primary sm:text-3xl text-xl leading-tight font-bold hover:underline">The future of Web AI and Agentic Workflow</a>
-                                <p className="text-gray-300 line-clamp-3">Artificial Intelligence is reshaping how we build and interact with the web. From autopilots to autonomous coding agents...</p>
-                                <p className="text-primary cursor-pointer hover:text-primary/50 font-medium">Read More &gt;&gt;</p>
-                            </div>
-
-                            <div className="flex items-center gap-3 mt-4 flex-wrap">
-                                <p className="bg-white/10 rounded-xl px-3 py-1 text-gray-300 text-xs">AI & Tech</p>
-                                <p className="text-gray-300 text-xs"><span className="font-bold text-primary">Text:</span> Philippe</p>
-                                <p className="text-gray-300 text-xs font-extralight"><span className="font-bold text-primary">Date:</span> 15.Feb 2026</p>
-                                <p className="text-gray-300 text-xs font-extralight"><span className="font-bold text-primary">Read:</span> 3 Min</p>
-                            </div>
-                        </div>
-                    </div>
+                        ))
+                    }
 
                     <a href="/blogs" className="bg-primary px-8 py-2.5 text-slate-950 font-bold rounded-full mt-4 hover:bg-primary/80 transition-all hover:scale-105 shadow-lg shadow-primary/20">View more</a>
                 </div>

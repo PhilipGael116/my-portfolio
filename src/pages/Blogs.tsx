@@ -63,10 +63,11 @@ const Blogs = () => {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </GridBackground>
 
 
-            <Footer />
+
         </div>
     )
 }
