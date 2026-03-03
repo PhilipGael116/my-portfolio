@@ -1,12 +1,16 @@
 import { FaGithub, FaDiscord, FaInstagram, FaSearch } from "react-icons/fa"
 import { Menu } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
+import MobileMenu from "./MobileMenu"
+
 
 const Header = () => {
 
     const [isActive, setIsActive] = useState("home");
     const [showHeader, setShowHeader] = useState(true);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const lastScrollY = useRef(0);
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -33,7 +37,11 @@ const Header = () => {
                     <a href="/" onClick={() => isActive !== "home" ? setIsActive("home") : null} className={`hidden sm:block ${isActive === "home" ? "text-primary/90" : "text-white"}`}>Home</a>
                     <a href="/blogs" onClick={() => isActive !== "blogs" ? setIsActive("blogs") : null} className={`hidden sm:block ${isActive === "blogs" ? "text-primary/90" : "text-white"}`}>Blogs</a>
                     <FaSearch className="sm:hidden block" />
-                    <Menu className="sm:hidden block" />
+                    <Menu
+                        className="sm:hidden block cursor-pointer hover:text-primary transition-colors"
+                        onClick={() => setIsMenuOpen(true)}
+                    />
+
                     <div className="relative hidden md:block group">
                         <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors text-xs" />
                         <input
@@ -47,7 +55,9 @@ const Header = () => {
                     <a href="https://github.com/PhilipGael116" target="_blank" className="sm:flex gap-2 items-center hidden"><FaGithub className="text-primary" /> <span className="hidden md:block">Github</span></a>
                 </div>
             </header>
+            <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
         </div>
+
     )
 }
 
