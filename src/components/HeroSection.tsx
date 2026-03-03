@@ -1,4 +1,4 @@
-import { User, Cpu, Briefcase, LayoutDashboard, Mail, MapPin, Link, Download, GraduationCap, Zap, Rocket, Layers, Send } from "lucide-react"
+import { User, Briefcase, LayoutDashboard, Mail, MapPin, Link, Download, GraduationCap, Zap } from "lucide-react"
 import { FlipWords } from "../components/ui/flip-words"
 
 import { useState } from "react";

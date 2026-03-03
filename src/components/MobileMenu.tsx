@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { User, LayoutDashboard, Zap, Briefcase, Mail, X } from "lucide-react";
+import { User, LayoutDashboard, Zap, Briefcase, Mail } from "lucide-react";
 
 interface MobileMenuProps {
     isOpen: boolean;
