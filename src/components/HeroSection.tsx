@@ -1,12 +1,17 @@
 import { User, Briefcase, LayoutDashboard, Mail, MapPin, Link, Download, GraduationCap, Zap } from "lucide-react"
 import { FlipWords } from "../components/ui/flip-words"
 
-import { useState } from "react";
 
-const HeroSection = () => {
+
+
+interface HeroSectionProps {
+    activeNav: string;
+    setActiveNav: (id: string) => void;
+}
+
+const HeroSection = ({ activeNav, setActiveNav }: HeroSectionProps) => {
 
     const titles = ["Developer", "Designer", "Engineer", "Architect"];
-    const [activeNav, setActiveNav] = useState("");
 
 
     return (

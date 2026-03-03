@@ -65,7 +65,8 @@ const Home = () => {
         <GridBackground>
             <div>
                 <Header />
-                <HeroSection />
+                <HeroSection activeNav={activeNav} setActiveNav={setActiveNav} />
+
             </div>
 
             {/* About Section */}
