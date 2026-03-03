@@ -6,9 +6,10 @@ import { CanvasRevealEffect, Card } from "@/components/ui/canvas-reveal-effect";
 import { CarouselDemo } from "../components/ui/carousel"
 import { InfiniteMovingCardsDemo } from "@/components/ui/testimonials"
 
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 
 const Home = () => {
+    const [activeNav, setActiveNav] = useState("");
 
     useEffect(() => {
         const sections = document.querySelectorAll("section");
